@@ -99,6 +99,8 @@ Phase 1 lock:
 
 ## Phase 2: SwiftUI App Scaffold
 
+Status: in progress. Scaffold files exist; simulator build verification is blocked until full Xcode is selected.
+
 Primary skills:
 - `design-taste-frontend` for review only.
 - `imagegen-frontend-mobile` if screen concepts are needed.

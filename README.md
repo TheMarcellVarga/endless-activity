@@ -6,7 +6,7 @@ The repo is currently in planning-first mode. App implementation should follow t
 
 ## Current Status
 
-Roadmap phase: Phase 1 product, brand, and catalog lock complete. Next phase is Phase 2 SwiftUI app scaffold.
+Roadmap phase: Phase 2 SwiftUI app scaffold in progress. The project scaffold exists; simulator build verification is pending full Xcode availability.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -17,6 +17,13 @@ Created planning artifacts:
 - Product, architecture, data, ranking, design, privacy, testing, demo, and case-study docs under [docs](docs)
 
 SwiftUI app code may start in Phase 2. Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
+
+Created app scaffold:
+- `EndlessActivity.xcodeproj`
+- `EndlessActivity/App/EndlessActivityApp.swift`
+- Native Discover, Saved, and Preferences tab placeholders
+- Asset catalog placeholder
+- XCTest and XCUITest targets
 
 ## Product Direction
 
@@ -109,13 +116,16 @@ flowchart LR
 
 ## Local Development
 
-Implementation has not started yet. Once Phase 2 creates the SwiftUI project, update this section with exact Xcode and command-line build instructions.
+Open `EndlessActivity.xcodeproj` in Xcode and run the `EndlessActivity` scheme.
 
-Expected future commands:
+Command-line build after full Xcode is selected:
 
 ```bash
-xcodebuild -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' build
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
 ```
+
+Current local blocker: this machine has Command Line Tools selected instead of full Xcode, so `xcodebuild` and `simctl` cannot run here yet.
 
 ## Demo Path
 

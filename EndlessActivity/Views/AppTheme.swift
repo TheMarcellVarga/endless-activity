@@ -1,0 +1,47 @@
+import SwiftUI
+
+enum AppTheme {
+    static let ink = Color(red: 15 / 255, green: 17 / 255, blue: 19 / 255)
+    static let paper = Color(red: 245 / 255, green: 246 / 255, blue: 247 / 255)
+    static let actionCoral = Color(red: 1.0, green: 90 / 255, blue: 79 / 255)
+    static let leaf = Color(red: 52 / 255, green: 199 / 255, blue: 89 / 255)
+    static let sky = Color(red: 74 / 255, green: 163 / 255, blue: 1.0)
+    static let sun = Color(red: 1.0, green: 196 / 255, blue: 0)
+}
+
+struct PlaceholderPanel<Content: View>: View {
+    let title: String
+    let systemImage: String
+    let content: Content
+
+    init(title: String, systemImage: String, @ViewBuilder content: () -> Content) {
+        self.title = title
+        self.systemImage = systemImage
+        self.content = content()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Image(systemName: systemImage)
+                .font(.system(size: 32, weight: .semibold))
+                .foregroundStyle(AppTheme.actionCoral)
+                .frame(width: 56, height: 56)
+                .background(AppTheme.actionCoral.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text(title)
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(AppTheme.ink)
+
+                content
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(20)
+        .background(.white, in: RoundedRectangle(cornerRadius: 8))
+        .shadow(color: AppTheme.ink.opacity(0.08), radius: 18, x: 0, y: 10)
+        .accessibilityElement(children: .combine)
+    }
+}

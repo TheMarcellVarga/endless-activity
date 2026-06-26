@@ -6,7 +6,7 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 ## Current Status
 
-Planning docs are being created. App implementation has not started.
+Phase 2 scaffold is present. Discover, Saved, and Preferences are intentionally placeholder views until Phase 3 through Phase 5 replace them with real catalog, persistence, ranking, swipe, saved, and filter behavior.
 
 ## Placeholder Checklist
 
@@ -21,9 +21,9 @@ Update this list during implementation:
 - [ ] Empty saved state implemented.
 - [ ] Reset filters implemented.
 - [ ] Reset skipped implemented.
-- [ ] App icon placeholder replaced or documented.
+- [x] App icon placeholder replaced or documented.
 - [ ] Debug copy removed from user-facing screens.
-- [ ] README current status updated.
+- [x] README current status updated.
 - [ ] Demo walkthrough verified.
 
 ## Visual Polish Checklist

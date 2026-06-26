@@ -2,7 +2,7 @@
 
 ## Current State
 
-The repository currently contains planning docs and local Codex skills. The SwiftUI project has not been scaffolded yet.
+The repository contains planning docs, local Codex skills, and the initial SwiftUI app scaffold.
 
 ## Required Tools
 
@@ -15,10 +15,10 @@ Expected implementation environment:
 Record exact versions here after scaffold:
 
 ```text
-Xcode:
-Swift:
-iOS deployment target:
-Primary simulator:
+Xcode: unavailable via xcodebuild; active developer directory is /Library/Developer/CommandLineTools
+Swift: Apple Swift version 6.3.2
+iOS deployment target: 17.0
+Primary simulator: pending full Xcode / simctl availability
 ```
 
 ## Repository Assets
@@ -60,13 +60,17 @@ Adjust to the actual Xcode structure after creation and update this doc.
 
 ## Build Commands
 
-Add exact commands after scaffold.
-
-Expected:
+After full Xcode is installed and selected:
 
 ```bash
-xcodebuild -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' build
-xcodebuild -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' build
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+```
+
+If `xcodebuild` reports that the active developer directory is Command Line Tools, select full Xcode first:
+
+```bash
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
 ## Environment Variables

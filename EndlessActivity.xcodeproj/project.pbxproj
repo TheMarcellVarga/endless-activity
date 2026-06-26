@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA0000000000000000000001 /* EndlessActivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000101 /* EndlessActivityApp.swift */; };
+		EA0000000000000000000002 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000102 /* RootTabView.swift */; };
+		EA0000000000000000000003 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000103 /* AppTheme.swift */; };
+		EA0000000000000000000004 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000104 /* DiscoverView.swift */; };
+		EA0000000000000000000005 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000105 /* SavedView.swift */; };
+		EA0000000000000000000006 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000106 /* PreferencesView.swift */; };
+		EA0000000000000000000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000107 /* Assets.xcassets */; };
+		EA0000000000000000000008 /* EndlessActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000108 /* EndlessActivityTests.swift */; };
+		EA0000000000000000000009 /* EndlessActivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000109 /* EndlessActivityUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA0000000000000000000201 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0000000000000000000301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA0000000000000000000401;
+			remoteInfo = EndlessActivity;
+		};
+		EA0000000000000000000202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0000000000000000000301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA0000000000000000000401;
+			remoteInfo = EndlessActivity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA0000000000000000000101 /* EndlessActivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessActivityApp.swift; sourceTree = "<group>"; };
+		EA0000000000000000000102 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		EA0000000000000000000103 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		EA0000000000000000000104 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		EA0000000000000000000105 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		EA0000000000000000000106 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		EA0000000000000000000107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA0000000000000000000108 /* EndlessActivityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessActivityTests.swift; sourceTree = "<group>"; };
+		EA0000000000000000000109 /* EndlessActivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessActivityUITests.swift; sourceTree = "<group>"; };
+		EA0000000000000000000501 /* EndlessActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EndlessActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0000000000000000000502 /* EndlessActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EndlessActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0000000000000000000503 /* EndlessActivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EndlessActivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA0000000000000000000601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0000000000000000000602 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0000000000000000000603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA0000000000000000000701 = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000702 /* EndlessActivity */,
+				EA0000000000000000000706 /* EndlessActivityTests */,
+				EA0000000000000000000707 /* EndlessActivityUITests */,
+				EA0000000000000000000708 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000702 /* EndlessActivity */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000703 /* App */,
+				EA0000000000000000000704 /* Views */,
+				EA0000000000000000000705 /* Resources */,
+			);
+			path = EndlessActivity;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000703 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000101 /* EndlessActivityApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000704 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000103 /* AppTheme.swift */,
+				EA0000000000000000000102 /* RootTabView.swift */,
+				EA0000000000000000000104 /* DiscoverView.swift */,
+				EA0000000000000000000105 /* SavedView.swift */,
+				EA0000000000000000000106 /* PreferencesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000705 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000107 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000706 /* EndlessActivityTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000108 /* EndlessActivityTests.swift */,
+			);
+			path = EndlessActivityTests;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000707 /* EndlessActivityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000109 /* EndlessActivityUITests.swift */,
+			);
+			path = EndlessActivityUITests;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000708 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000501 /* EndlessActivity.app */,
+				EA0000000000000000000502 /* EndlessActivityTests.xctest */,
+				EA0000000000000000000503 /* EndlessActivityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA0000000000000000000401 /* EndlessActivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA0000000000000000000802 /* Build configuration list for PBXNativeTarget "EndlessActivity" */;
+			buildPhases = (
+				EA0000000000000000000901 /* Sources */,
+				EA0000000000000000000601 /* Frameworks */,
+				EA0000000000000000000902 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EndlessActivity;
+			productName = EndlessActivity;
+			productReference = EA0000000000000000000501 /* EndlessActivity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA0000000000000000000402 /* EndlessActivityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA0000000000000000000803 /* Build configuration list for PBXNativeTarget "EndlessActivityTests" */;
+			buildPhases = (
+				EA0000000000000000000903 /* Sources */,
+				EA0000000000000000000602 /* Frameworks */,
+				EA0000000000000000000904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA0000000000000000000203 /* PBXTargetDependency */,
+			);
+			name = EndlessActivityTests;
+			productName = EndlessActivityTests;
+			productReference = EA0000000000000000000502 /* EndlessActivityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA0000000000000000000403 /* EndlessActivityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA0000000000000000000804 /* Build configuration list for PBXNativeTarget "EndlessActivityUITests" */;
+			buildPhases = (
+				EA0000000000000000000905 /* Sources */,
+				EA0000000000000000000603 /* Frameworks */,
+				EA0000000000000000000906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA0000000000000000000204 /* PBXTargetDependency */,
+			);
+			name = EndlessActivityUITests;
+			productName = EndlessActivityUITests;
+			productReference = EA0000000000000000000503 /* EndlessActivityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA0000000000000000000301 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					EA0000000000000000000401 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					EA0000000000000000000402 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = EA0000000000000000000401;
+					};
+					EA0000000000000000000403 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = EA0000000000000000000401;
+					};
+				};
+			};
+			buildConfigurationList = EA0000000000000000000801 /* Build configuration list for PBXProject "EndlessActivity" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA0000000000000000000701;
+			productRefGroup = EA0000000000000000000708 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA0000000000000000000401 /* EndlessActivity */,
+				EA0000000000000000000402 /* EndlessActivityTests */,
+				EA0000000000000000000403 /* EndlessActivityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA0000000000000000000902 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0000000000000000000007 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0000000000000000000904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0000000000000000000906 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA0000000000000000000901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0000000000000000000001 /* EndlessActivityApp.swift in Sources */,
+				EA0000000000000000000002 /* RootTabView.swift in Sources */,
+				EA0000000000000000000003 /* AppTheme.swift in Sources */,
+				EA0000000000000000000004 /* DiscoverView.swift in Sources */,
+				EA0000000000000000000005 /* SavedView.swift in Sources */,
+				EA0000000000000000000006 /* PreferencesView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0000000000000000000903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0000000000000000000008 /* EndlessActivityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0000000000000000000905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0000000000000000000009 /* EndlessActivityUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA0000000000000000000203 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA0000000000000000000401 /* EndlessActivity */;
+			targetProxy = EA0000000000000000000201 /* PBXContainerItemProxy */;
+		};
+		EA0000000000000000000204 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA0000000000000000000401 /* EndlessActivity */;
+			targetProxy = EA0000000000000000000202 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EA0000000000000000000A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA0000000000000000000A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA0000000000000000000A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Endless Activity";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcellvarga.EndlessActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EA0000000000000000000A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Endless Activity";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcellvarga.EndlessActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EA0000000000000000000A05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcellvarga.EndlessActivityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EndlessActivity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EndlessActivity";
+			};
+			name = Debug;
+		};
+		EA0000000000000000000A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcellvarga.EndlessActivityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EndlessActivity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EndlessActivity";
+			};
+			name = Release;
+		};
+		EA0000000000000000000A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcellvarga.EndlessActivityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = EndlessActivity;
+			};
+			name = Debug;
+		};
+		EA0000000000000000000A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcellvarga.EndlessActivityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = EndlessActivity;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA0000000000000000000801 /* Build configuration list for PBXProject "EndlessActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0000000000000000000A01 /* Debug */,
+				EA0000000000000000000A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA0000000000000000000802 /* Build configuration list for PBXNativeTarget "EndlessActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0000000000000000000A03 /* Debug */,
+				EA0000000000000000000A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA0000000000000000000803 /* Build configuration list for PBXNativeTarget "EndlessActivityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0000000000000000000A05 /* Debug */,
+				EA0000000000000000000A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA0000000000000000000804 /* Build configuration list for PBXNativeTarget "EndlessActivityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0000000000000000000A07 /* Debug */,
+				EA0000000000000000000A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA0000000000000000000301 /* Project object */;
+}
