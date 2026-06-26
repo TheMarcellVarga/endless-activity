@@ -43,7 +43,7 @@ Use repo-local skills from `.agents/skills`.
 
 ## Phase 0: Documentation Control Plane
 
-Status: in progress.
+Status: complete.
 
 Primary docs:
 - `README.md`
@@ -69,6 +69,8 @@ Acceptance gate:
 
 ## Phase 1: Product, Brand, and Catalog Lock
 
+Status: complete.
+
 Primary skills:
 - `brandkit`
 - `imagegen-frontend-mobile`
@@ -87,6 +89,13 @@ Acceptance gate:
 - The v1 non-goals are explicit.
 - Catalog fields are final enough to implement.
 - Visual direction is specific enough to guide SwiftUI screens.
+
+Phase 1 lock:
+- Final working name: Endless Activity.
+- One sentence: Endless Activity is a native iOS swipe deck for finding something realistic to do when you are bored.
+- Visual direction: tactile stacked-card identity, off-white native iOS surfaces, ink text, coral save/action accent, green/blue/yellow category accents, subtle grain, no mascot, no purple AI gradient.
+- App icon direction: stacked activity cards with a forward swipe/path cut.
+- Catalog implementation target: at least 50 bundled JSON activities in Phase 3, using the schema in `docs/DATA_MODEL.md` and the starter set in `docs/ACTIVITY_CATALOG_GUIDE.md`.
 
 ## Phase 2: SwiftUI App Scaffold
 

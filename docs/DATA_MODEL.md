@@ -15,7 +15,7 @@ Required fields:
 - `setting`: indoor, outdoor, either.
 - `socialMode`: solo, friend, date, group, any.
 - `tags`: searchable/rankable descriptors.
-- `materials`: optional list of items needed.
+- `materials`: list of items needed. Use an empty list when nothing special is needed.
 - `steps`: short action plan.
 
 Optional fields:
@@ -36,10 +36,11 @@ Initial categories:
 - social
 - outdoors
 - reset
-- local
 - entertainment
 
 Keep category names stable because ranking and filters depend on them.
+
+Do not add a `local` category in v1. Location-specific ideas can use `outdoors`, `social`, or tags such as `nearby`, but the app must not require location permission.
 
 ## Cost Levels
 
@@ -99,13 +100,37 @@ Preferences are explicit user choices. Ranking boosts from saved activity histor
 ## JSON Catalog Rules
 
 - IDs must be unique.
+- IDs use kebab case in the shape `category-short-title-001`.
 - Required fields must be present.
 - Titles should be under 60 characters.
 - Summaries should be under 160 characters.
 - Steps should be concrete.
 - Tags should be lowercase.
+- Tags should use kebab case when more than one word is needed.
 - Duration should be realistic.
 - Cost and energy should match the activity.
+- Every activity has 2 to 6 tags.
+- Every activity has 2 to 5 steps.
+- `materials` can be empty but must be present.
+- `safetyNote` is required for activities involving cooking heat, outdoor night movement, tools, or strenuous movement.
+
+## Codable Enum Values
+
+Use these exact raw string values:
+
+```text
+ActivityCategory: creative, movement, food, home, learning, social, outdoors, reset, entertainment
+CostLevel: free, low, medium, high
+EnergyLevel: low, medium, high
+ActivitySetting: indoor, outdoor, either
+SocialMode: solo, friend, date, group, any
+Season: spring, summer, autumn, winter, any
+TimeOfDay: morning, afternoon, evening, night, any
+SpaceNeeded: tiny, room, kitchen, outdoors, public
+UserActivityAction: saved, skipped, completed
+```
+
+`completed` remains optional behavior. The model can support it, but Phase 4 and Phase 5 should prioritize saved and skipped first.
 
 ## Example Activity
 

@@ -10,7 +10,7 @@ Use `brandkit` for identity and presentation boards. Use `imagegen-frontend-mobi
 
 Endless Activity.
 
-The name is literal and clear for planning. Phase 1 may explore alternatives, but implementation can proceed with this name unless a stronger option is selected.
+This is the final working name for the MVP. Do not rename during implementation unless the roadmap is explicitly updated.
 
 ## Brand Promise
 
@@ -33,6 +33,8 @@ Useful:
 - realistic time and cost
 - clear next steps
 
+Copy should sound like a practical friend making a clear suggestion. It should not sound like a coach, chatbot, marketplace, or social app.
+
 ## Visual Keywords
 
 - tactile
@@ -43,6 +45,23 @@ Useful:
 - activity-led
 - lightly playful
 - not childish
+
+## Phase 1 Visual Direction
+
+Use the Phase 1 `brandkit` and `imagegen-frontend-mobile` references as direction:
+- identity metaphor: stacked activity cards plus a forward swipe/path cut
+- surface: off-white app UI with ink text and restrained dark presentation backgrounds for case-study assets
+- primary action color: warm coral for save/commit actions
+- support colors: leaf green, sky blue, and warm yellow for categories and lightweight metadata
+- texture: subtle tactile grain or soft material depth, never heavy grunge
+- typography mood: friendly geometric sans, high readability, native iOS scale
+- screen rhythm: immediate Discover card, native detail sheet, simple Saved list, practical Preferences controls
+
+Avoid making the app look like a dating product. The card stack is about quick activity discovery, not people, matches, or social validation.
+
+Phase 1 reference assets:
+- [Brandkit overview](assets/phase-1/brandkit-overview.png)
+- [Mobile flow concept](assets/phase-1/mobile-flow-concept.png)
 
 ## Avoid
 
@@ -55,12 +74,10 @@ Useful:
 
 ## Logo Direction
 
-Possible metaphors:
-- stacked cards
-- spark of action
-- path branching into choices
-- simple swipe motion
-- calendar-free activity prompt
+Locked metaphor:
+- stacked cards that imply many possible activities
+- a simple forward swipe/path cut that implies taking action
+- rounded, app-icon-safe geometry
 
 The logo should work as:
 - iOS app icon
@@ -79,6 +96,14 @@ Requirements:
 
 Use `brandkit` for concept boards before finalizing.
 
+Phase 2 asset catalog should start with this icon direction:
+- dark ink or off-white rounded-square base
+- three stacked rounded cards
+- coral front card
+- green and blue cards behind it
+- white or negative-space forward path mark
+- no text, mascot, calendar, map pin, sparkles, or complex scene
+
 ## Screenshot Direction
 
 Use `imagegen-frontend-mobile` or real simulator screenshots after implementation.
@@ -89,6 +114,8 @@ Screenshots should show:
 - preferences
 - detail sheet
 - empty state or reset flow if polished
+
+The Discover screenshot should be image-led and practical: title, duration, cost, energy, setting, and visible skip/save affordances. Preferences should use native controls, chips, segmented options, or toggles rather than a long form.
 
 ## Case Study Assets
 

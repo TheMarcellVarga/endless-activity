@@ -6,7 +6,7 @@ The repo is currently in planning-first mode. App implementation should follow t
 
 ## Current Status
 
-Roadmap phase: Phase 0 documentation control plane.
+Roadmap phase: Phase 1 product, brand, and catalog lock complete. Next phase is Phase 2 SwiftUI app scaffold.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -16,13 +16,13 @@ Created planning artifacts:
 - [Codex skills routing](docs/CODEX_SKILLS.md)
 - Product, architecture, data, ranking, design, privacy, testing, demo, and case-study docs under [docs](docs)
 
-No SwiftUI app code should be added before Phase 0 and Phase 1 acceptance gates are satisfied.
+SwiftUI app code may start in Phase 2. Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
 
 ## Product Direction
 
-Working name: Endless Activity.
+Final working name: Endless Activity.
 
-One sentence: Endless Activity is a native iOS swipe deck for finding something to do when you are bored.
+One sentence: Endless Activity is a native iOS swipe deck for finding something realistic to do when you are bored.
 
 MVP boundary:
 - Solo user experience.
