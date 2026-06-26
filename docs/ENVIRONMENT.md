@@ -2,7 +2,7 @@
 
 ## Current State
 
-The repository contains planning docs, local Codex skills, and the initial SwiftUI app scaffold.
+The repository contains planning docs, local Codex skills, and the initial SwiftUI app scaffold. Phase 2 remains blocked on simulator verification until full Xcode is available.
 
 ## Required Tools
 
@@ -12,13 +12,14 @@ Expected implementation environment:
 - iOS Simulator.
 - Swift current stable toolchain bundled with Xcode.
 
-Record exact versions here after scaffold:
+Last checked on 2026-06-26:
 
 ```text
 Xcode: unavailable via xcodebuild; active developer directory is /Library/Developer/CommandLineTools
 Swift: Apple Swift version 6.3.2
 iOS deployment target: 17.0
 Primary simulator: pending full Xcode / simctl availability
+Full Xcode app discovery: no /Applications/Xcode*.app match; mdfind bundle lookup returned no result
 ```
 
 ## Repository Assets
@@ -72,6 +73,8 @@ If `xcodebuild` reports that the active developer directory is Command Line Tool
 ```bash
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
+
+Phase 2 cannot be marked complete until the build and test commands above pass on a simulator.
 
 ## Environment Variables
 

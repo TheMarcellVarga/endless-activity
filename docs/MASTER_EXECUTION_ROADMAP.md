@@ -99,7 +99,7 @@ Phase 1 lock:
 
 ## Phase 2: SwiftUI App Scaffold
 
-Status: in progress. Scaffold files exist; simulator build verification is blocked until full Xcode is selected.
+Status: in progress. Scaffold files exist; simulator build verification is blocked until full Xcode is installed and selected.
 
 Primary skills:
 - `design-taste-frontend` for review only.
@@ -118,6 +118,14 @@ Acceptance gate:
 - Tabs render on small and large iPhones.
 - Placeholder surfaces are tracked in `docs/UNFINISHED_SURFACES_AUDIT.md`.
 - No fake final behavior is presented as complete.
+
+Latest verification note, 2026-06-26:
+- `xcode-select -p` returns `/Library/Developer/CommandLineTools`.
+- `xcodebuild -version` fails because the active developer directory is Command Line Tools.
+- `/Applications/Xcode*.app` and Spotlight lookup for `com.apple.dt.Xcode` found no full Xcode install.
+- `EndlessActivity.xcodeproj/project.pbxproj` lints successfully.
+- Asset catalog manifests parse as valid JSON.
+- Phase 3 must not begin until the simulator build/test gate can run.
 
 ## Phase 3: Activity Data, Persistence, and Ranking
 

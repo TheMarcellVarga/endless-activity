@@ -8,6 +8,8 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 Phase 2 scaffold is present. Discover, Saved, and Preferences are intentionally placeholder views until Phase 3 through Phase 5 replace them with real catalog, persistence, ranking, swipe, saved, and filter behavior.
 
+Phase 2 cannot be closed yet because simulator build verification is blocked by missing full Xcode on this machine. Do not proceed to Phase 3 until `xcodebuild` can run against an iOS simulator.
+
 ## Placeholder Checklist
 
 Update this list during implementation:

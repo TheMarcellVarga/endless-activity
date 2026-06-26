@@ -6,7 +6,7 @@ The repo is currently in planning-first mode. App implementation should follow t
 
 ## Current Status
 
-Roadmap phase: Phase 2 SwiftUI app scaffold in progress. The project scaffold exists; simulator build verification is pending full Xcode availability.
+Roadmap phase: Phase 2 SwiftUI app scaffold in progress. The project scaffold exists; simulator build verification remains blocked because full Xcode is not installed or discoverable on this machine.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -16,7 +16,7 @@ Created planning artifacts:
 - [Codex skills routing](docs/CODEX_SKILLS.md)
 - Product, architecture, data, ranking, design, privacy, testing, demo, and case-study docs under [docs](docs)
 
-SwiftUI app code may start in Phase 2. Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
+Do not start Phase 3 until the Phase 2 simulator build gate passes with full Xcode selected. Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
 
 Created app scaffold:
 - `EndlessActivity.xcodeproj`
@@ -74,11 +74,11 @@ Default routing:
 Read these before implementation:
 
 1. [Master execution roadmap](docs/MASTER_EXECUTION_ROADMAP.md)
-2. [Agent instructions](AGENTS.md)
+2. [Codex skills routing](docs/CODEX_SKILLS.md)
 3. [Workspace plan](EndlessActivityWorkspacePlan.md)
 4. [Product spec](docs/PRODUCT_SPEC.md)
-5. [Codex skills routing](docs/CODEX_SKILLS.md)
-6. [Implementation plan](docs/IMPLEMENTATION_PLAN.md)
+5. [Implementation plan](docs/IMPLEMENTATION_PLAN.md)
+6. Relevant subsystem docs in [docs](docs)
 
 ## Documentation Map
 
@@ -125,7 +125,7 @@ xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destinati
 xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
 ```
 
-Current local blocker: this machine has Command Line Tools selected instead of full Xcode, so `xcodebuild` and `simctl` cannot run here yet.
+Current local blocker verified on 2026-06-26: this machine has Command Line Tools selected and no full Xcode app is discoverable, so `xcodebuild` and `simctl` cannot run here yet.
 
 ## Demo Path
 
