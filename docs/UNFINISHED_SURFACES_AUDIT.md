@@ -6,23 +6,23 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 ## Current Status
 
-Phases 2 through 4 are complete. Discover and activity details are implemented. Saved and Preferences remain intentionally placeholder views until Phase 5 connects them to the verified shared foundation.
+Phases 2 through 5 are complete. Discover, activity details, Saved, Preferences, and their recovery states are connected to the local persistence and ranking foundation. Phase 6 owns final testing, presentation, and release polish.
 
 ## Placeholder Checklist
 
 Update this list during implementation:
 
 - [x] Discover placeholder removed.
-- [ ] Saved placeholder removed.
-- [ ] Preferences placeholder removed.
+- [x] Saved placeholder removed.
+- [x] Preferences placeholder removed.
 - [x] Activity detail placeholder removed.
 - [x] Demo catalog contains at least 50 real activities.
 - [x] Empty deck state implemented.
-- [ ] Empty saved state implemented.
-- [ ] Reset filters implemented.
+- [x] Empty saved state implemented.
+- [x] Reset filters implemented.
 - [x] Reset skipped implemented.
 - [x] App icon placeholder replaced or documented.
-- [ ] Debug copy removed from user-facing screens.
+- [x] Debug copy removed from user-facing screens.
 - [x] README current status updated.
 - [ ] Demo walkthrough verified.
 
@@ -42,7 +42,7 @@ Update this list during implementation:
 - [x] Catalog tests pass.
 - [x] Ranking tests pass.
 - [x] Persistence tests pass.
-- [ ] UI golden path passes.
+- [x] UI golden path passes.
 - [x] Phase 4 Discover and detail simulator path passes.
 
 ## Deferred Ideas

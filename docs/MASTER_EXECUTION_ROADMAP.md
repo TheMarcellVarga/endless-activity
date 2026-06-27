@@ -187,7 +187,7 @@ Completion verification, 2026-06-27:
 
 ## Phase 5: Saved, Preferences, and Empty States
 
-Status: not started. This is the next roadmap phase.
+Status: complete.
 
 Primary skill:
 - `design-taste-frontend`
@@ -207,7 +207,18 @@ Acceptance gate:
 - Empty states give useful recovery actions.
 - Dynamic Type layouts remain usable.
 
+Completion verification, 2026-06-27:
+- Saved activities refresh from local persistence when the tab opens, support native detail presentation, and can be removed from the row or detail action.
+- Duration, cost, energy, setting, company, and category filters persist immediately and refresh Discover when it becomes active.
+- Empty Saved explains how to populate the list; empty Discover offers Relax Filters and Reset Skipped recovery actions.
+- Reset Filters preserves activity history; destructive Reset Activity History preserves filters and requires confirmation.
+- Unit coverage protects Saved and Preferences presentation state, and UI coverage exercises save/remove plus filter/reset flows.
+- The full iPhone 17e test suite and iPhone 17 Pro Max build pass on iOS 26.5.
+- Verification: `xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test`.
+
 ## Phase 6: Testing, Polish, Demo, and Case Study
+
+Status: next.
 
 Primary skills:
 - `brandkit`

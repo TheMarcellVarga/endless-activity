@@ -6,7 +6,7 @@ App implementation follows the roadmap and docs in this repository instead of re
 
 ## Current Status
 
-Roadmap phase: Phase 5 Saved, Preferences, and empty states is next. Phases 2 through 4 are complete: the native scaffold, bundled catalog, persistence, filtering, ranking, and Discover swipe experience are implemented and tested.
+Roadmap phase: Phase 6 testing, polish, demo, and case study is next. Phases 2 through 5 are complete: the native scaffold, bundled catalog, persistence, ranking, Discover deck, Saved list, practical filters, reset flows, and empty states are implemented and tested.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -21,7 +21,7 @@ Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the 
 Created native app:
 - `EndlessActivity.xcodeproj`
 - `EndlessActivity/App/EndlessActivityApp.swift`
-- Working Discover deck plus Saved and Preferences tab placeholders
+- Working Discover, Saved, and Preferences tabs
 - Asset catalog placeholder
 - XCTest and XCUITest targets
 
@@ -38,6 +38,14 @@ Completed Phase 4 experience:
 - Native activity detail sheet with materials, steps, safety guidance, and save action
 - VoiceOver custom actions, Reduce Motion handling, and large Dynamic Type support
 - Unit and UI coverage for deck behavior, controls, and detail presentation
+
+Completed Phase 5 experience:
+- Persistence-backed Saved list with native details and removal actions
+- Duration, cost, energy, setting, company, and category preferences
+- Immediate filter persistence with Discover refresh on tab activation
+- Useful Saved and Discover empty states with explicit recovery actions
+- Separate filter reset and confirmed activity-history reset flows
+- Unit and UI coverage for Saved and Preferences behavior
 
 ## Product Direction
 

@@ -53,10 +53,8 @@ Short explanation:
 Run:
 
 ```bash
-xcodebuild -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
 ```
-
-This command is a placeholder until the Xcode project exists.
 
 Manual checks:
 - right swipe saves

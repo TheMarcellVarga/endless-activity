@@ -81,6 +81,27 @@ final class DiscoverViewModel {
         }
     }
 
+    func resetFilters() {
+        do {
+            persistedState.preferences = .defaults
+            try persistenceStore.save(persistedState)
+            rebuildDeck()
+        } catch {
+            loadState = .failed("Your filters could not be reset. Please try again.")
+        }
+    }
+
+    func refresh() {
+        guard !catalog.isEmpty else { return }
+        do {
+            persistedState = try persistenceStore.load()
+            rebuildDeck()
+            loadState = .ready
+        } catch {
+            loadState = .failed("Your activities could not be refreshed. Please try again.")
+        }
+    }
+
     private func persistAction(
         for activity: Activity,
         update: (inout PersistedActivityState) -> Void
@@ -137,6 +158,7 @@ struct DiscoverView: View {
             .background(AppTheme.paper)
             .navigationTitle("Discover")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear { model.refresh() }
             .sheet(item: $model.selectedActivity) { activity in
                 ActivityDetailView(
                     activity: activity,
@@ -161,8 +183,14 @@ struct DiscoverView: View {
             ContentUnavailableView {
                 Label("You reached the end", systemImage: "rectangle.stack.badge.checkmark")
             } description: {
-                Text("Bring skipped ideas back to keep exploring. Saved activities stay saved.")
+                Text(model.persistedState.preferences.hasActiveFilters
+                     ? "Your current filters do not match any remaining ideas."
+                     : "Bring skipped ideas back to keep exploring. Saved activities stay saved.")
             } actions: {
+                if model.persistedState.preferences.hasActiveFilters {
+                    Button("Relax filters") { model.resetFilters() }
+                        .accessibilityIdentifier("relaxFilters")
+                }
                 Button("Reset skipped ideas") { model.resetSkipped() }
                     .buttonStyle(.borderedProminent)
                     .tint(AppTheme.actionCoral)
@@ -270,8 +298,8 @@ struct DiscoverView: View {
         guard !isCommittingSwipe, model.currentActivity != nil else { return }
         isCommittingSwipe = true
         let direction: CGFloat = action == .save ? 1 : -1
+        if action == .save { model.saveCurrent() } else { model.skipCurrent() }
         let finish = {
-            if action == .save { model.saveCurrent() } else { model.skipCurrent() }
             dragOffset = .zero
             isCommittingSwipe = false
         }
@@ -375,7 +403,7 @@ private struct MetadataLabel: View {
     }
 }
 
-private struct ActivityDetailView: View {
+struct ActivityDetailView: View {
     let activity: Activity
     let isSaved: Bool
     let onSave: () -> Void
@@ -428,12 +456,11 @@ private struct ActivityDetailView: View {
                     onSave()
                     dismiss()
                 } label: {
-                    Label(isSaved ? "Saved" : "Save for later", systemImage: isSaved ? "checkmark" : "bookmark.fill")
+                    Label(isSaved ? "Remove from saved" : "Save for later", systemImage: isSaved ? "bookmark.slash" : "bookmark.fill")
                         .frame(maxWidth: .infinity, minHeight: 48)
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(AppTheme.actionCoral)
-                .disabled(isSaved)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 12)
                 .background(.ultraThinMaterial)
@@ -461,45 +488,6 @@ private struct DetailSection: View {
             }
         }
     }
-}
-
-private extension Activity {
-    var durationText: String { durationMinutes < 60 ? "\(durationMinutes) min" : "\(durationMinutes / 60) hr" }
-    var accessibilitySummary: String {
-        "\(title). \(summary) \(durationText), \(costLevel.displayName) cost, \(energyLevel.displayName) energy, \(setting.displayName)."
-    }
-}
-
-private extension ActivityCategory {
-    var displayName: String { rawValue.capitalized }
-    var systemImage: String {
-        switch self {
-        case .creative: "paintpalette"
-        case .movement: "figure.walk"
-        case .food: "fork.knife"
-        case .home: "house"
-        case .learning: "book"
-        case .social: "person.2"
-        case .outdoors: "leaf"
-        case .reset: "sparkles"
-        case .entertainment: "play.rectangle"
-        }
-    }
-    var tint: Color {
-        switch self {
-        case .movement, .outdoors: AppTheme.leaf
-        case .learning, .entertainment: AppTheme.sky
-        case .food, .home: AppTheme.sun
-        default: AppTheme.actionCoral
-        }
-    }
-}
-
-private extension CostLevel { var displayName: String { rawValue.capitalized } }
-private extension EnergyLevel { var displayName: String { rawValue.capitalized } }
-private extension ActivitySetting {
-    var displayName: String { rawValue.capitalized }
-    var systemImage: String { self == .indoor ? "house" : self == .outdoor ? "sun.max" : "arrow.triangle.branch" }
 }
 
 #Preview { DiscoverView() }

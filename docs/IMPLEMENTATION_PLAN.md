@@ -98,6 +98,8 @@ Implemented:
 
 ## Phase 5: Saved, Preferences, and Empty States
 
+Status: complete on 2026-06-27.
+
 Create:
 - saved list
 - saved detail navigation
@@ -109,6 +111,14 @@ Create:
 - empty saved state
 
 Use `design-taste-frontend` to review hierarchy, density, and clarity.
+
+Implemented:
+- persistence-backed Saved list with details, removal, and a useful empty state
+- native preference controls for all locked practical constraints
+- immediate filter persistence and Discover refresh on tab activation
+- separate reset-filter and confirmed reset-history flows
+- filtered and exhausted-deck recovery actions
+- unit and UI coverage for Phase 5 presentation state and golden-path interactions
 
 ## Phase 6: Testing, Polish, Demo, and Case Study
 

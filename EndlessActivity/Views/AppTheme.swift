@@ -45,3 +45,43 @@ struct PlaceholderPanel<Content: View>: View {
         .accessibilityElement(children: .combine)
     }
 }
+
+extension Activity {
+    var durationText: String { durationMinutes < 60 ? "\(durationMinutes) min" : "\(durationMinutes / 60) hr" }
+    var accessibilitySummary: String {
+        "\(title). \(summary) \(durationText), \(costLevel.displayName) cost, \(energyLevel.displayName) energy, \(setting.displayName)."
+    }
+}
+
+extension ActivityCategory {
+    var displayName: String { rawValue.capitalized }
+    var systemImage: String {
+        switch self {
+        case .creative: "paintpalette"
+        case .movement: "figure.walk"
+        case .food: "fork.knife"
+        case .home: "house"
+        case .learning: "book"
+        case .social: "person.2"
+        case .outdoors: "leaf"
+        case .reset: "sparkles"
+        case .entertainment: "play.rectangle"
+        }
+    }
+    var tint: Color {
+        switch self {
+        case .movement, .outdoors: AppTheme.leaf
+        case .learning, .entertainment: AppTheme.sky
+        case .food, .home: AppTheme.sun
+        default: AppTheme.actionCoral
+        }
+    }
+}
+
+extension CostLevel { var displayName: String { rawValue.capitalized } }
+extension EnergyLevel { var displayName: String { rawValue.capitalized } }
+extension SocialMode { var displayName: String { self == .any ? "Any" : rawValue.capitalized } }
+extension ActivitySetting {
+    var displayName: String { rawValue.capitalized }
+    var systemImage: String { self == .indoor ? "house" : self == .outdoor ? "sun.max" : "arrow.triangle.branch" }
+}

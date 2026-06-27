@@ -222,6 +222,48 @@ final class EndlessActivityTests: XCTestCase {
         XCTAssertEqual(try store.load().savedIDs, [saved.id])
     }
 
+    @MainActor
+    func testSavedViewModelLoadsAndRemovesSavedActivity() throws {
+        let suiteName = "SavedViewModelTests-\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suiteName))
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+        let store = ActivityPersistenceStore(defaults: defaults, key: "state")
+        let catalog = try loader.load(bundle: Bundle(for: Self.self))
+        let saved = try XCTUnwrap(catalog.first)
+        try store.save(PersistedActivityState(savedIDs: [saved.id]))
+        let model = SavedViewModel(persistenceStore: store)
+
+        model.load(bundle: Bundle(for: Self.self))
+        XCTAssertEqual(model.savedActivities.map(\.id), [saved.id])
+
+        model.remove(saved)
+        XCTAssertTrue(model.savedActivities.isEmpty)
+        XCTAssertTrue(try store.load().savedIDs.isEmpty)
+    }
+
+    @MainActor
+    func testPreferencesViewModelPersistsFiltersAndResetsHistorySeparately() throws {
+        let suiteName = "PreferencesViewModelTests-\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suiteName))
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+        let store = ActivityPersistenceStore(defaults: defaults, key: "state")
+        try store.save(PersistedActivityState(savedIDs: ["saved"], skippedIDs: ["skipped"]))
+        let model = PreferencesViewModel(persistenceStore: store)
+
+        model.load()
+        model.updatePreferences { $0.maxDurationMinutes = 15 }
+        XCTAssertEqual(try store.load().preferences.maxDurationMinutes, 15)
+
+        model.resetHistory()
+        let afterHistoryReset = try store.load()
+        XCTAssertTrue(afterHistoryReset.savedIDs.isEmpty)
+        XCTAssertTrue(afterHistoryReset.skippedIDs.isEmpty)
+        XCTAssertEqual(afterHistoryReset.preferences.maxDurationMinutes, 15)
+
+        model.resetFilters()
+        XCTAssertEqual(try store.load().preferences, .defaults)
+    }
+
     private func makeActivity(
         id: String,
         category: ActivityCategory = .creative,
