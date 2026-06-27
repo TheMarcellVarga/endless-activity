@@ -6,9 +6,7 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 ## Current Status
 
-Phase 2 scaffold is present. Discover, Saved, and Preferences are intentionally placeholder views until Phase 3 through Phase 5 replace them with real catalog, persistence, ranking, swipe, saved, and filter behavior.
-
-Phase 2 cannot be closed yet because simulator build verification is blocked by missing full Xcode on this machine. Do not proceed to Phase 3 until `xcodebuild` can run against an iOS simulator.
+Phases 2 and 3 are complete. Discover, Saved, and Preferences remain intentionally placeholder views until Phases 4 and 5 connect the verified catalog, persistence, and ranking foundation to the interface.
 
 ## Placeholder Checklist
 
@@ -18,7 +16,7 @@ Update this list during implementation:
 - [ ] Saved placeholder removed.
 - [ ] Preferences placeholder removed.
 - [ ] Activity detail placeholder removed.
-- [ ] Demo catalog contains at least 50 real activities.
+- [x] Demo catalog contains at least 50 real activities.
 - [ ] Empty deck state implemented.
 - [ ] Empty saved state implemented.
 - [ ] Reset filters implemented.
@@ -41,9 +39,9 @@ Update this list during implementation:
 
 ## Test Checklist
 
-- [ ] Catalog tests pass.
-- [ ] Ranking tests pass.
-- [ ] Persistence tests pass.
+- [x] Catalog tests pass.
+- [x] Ranking tests pass.
+- [x] Persistence tests pass.
 - [ ] UI golden path passes.
 - [ ] Manual simulator demo passes.
 

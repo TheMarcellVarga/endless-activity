@@ -2,7 +2,7 @@
 
 ## Current State
 
-The repository contains planning docs, local Codex skills, and the initial SwiftUI app scaffold. Phase 2 remains blocked on simulator verification until full Xcode is available.
+The repository contains the verified SwiftUI scaffold and the complete Phase 3 data, persistence, ranking, catalog, and test foundation. Phase 4 is next.
 
 ## Required Tools
 
@@ -12,14 +12,15 @@ Expected implementation environment:
 - iOS Simulator.
 - Swift current stable toolchain bundled with Xcode.
 
-Last checked on 2026-06-26:
+Last checked on 2026-06-27:
 
 ```text
-Xcode: unavailable via xcodebuild; active developer directory is /Library/Developer/CommandLineTools
+Xcode: 26.6 (build 17F113), selected at /Applications/Xcode.app/Contents/Developer
 Swift: Apple Swift version 6.3.2
 iOS deployment target: 17.0
-Primary simulator: pending full Xcode / simctl availability
-Full Xcode app discovery: no /Applications/Xcode*.app match; mdfind bundle lookup returned no result
+Small simulator: iPhone 17e, iOS 26.5
+Large simulator: iPhone 17 Pro Max, iOS 26.5
+Latest test result: 9 tests passed (8 unit, 1 UI)
 ```
 
 ## Repository Assets
@@ -61,11 +62,10 @@ Adjust to the actual Xcode structure after creation and update this doc.
 
 ## Build Commands
 
-After full Xcode is installed and selected:
-
 ```bash
-xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' build
-xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' build
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.5' build
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
 ```
 
 If `xcodebuild` reports that the active developer directory is Command Line Tools, select full Xcode first:
@@ -74,7 +74,7 @@ If `xcodebuild` reports that the active developer directory is Command Line Tool
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
-Phase 2 cannot be marked complete until the build and test commands above pass on a simulator.
+These commands passed on 2026-06-27. The debugger-version warning printed during simulator startup is non-fatal; XCTest completed successfully.
 
 ## Environment Variables
 

@@ -99,7 +99,7 @@ Phase 1 lock:
 
 ## Phase 2: SwiftUI App Scaffold
 
-Status: in progress. Scaffold files exist; simulator build verification is blocked until full Xcode is installed and selected.
+Status: complete.
 
 Primary skills:
 - `design-taste-frontend` for review only.
@@ -119,15 +119,15 @@ Acceptance gate:
 - Placeholder surfaces are tracked in `docs/UNFINISHED_SURFACES_AUDIT.md`.
 - No fake final behavior is presented as complete.
 
-Latest verification note, 2026-06-26:
-- `xcode-select -p` returns `/Library/Developer/CommandLineTools`.
-- `xcodebuild -version` fails because the active developer directory is Command Line Tools.
-- `/Applications/Xcode*.app` and Spotlight lookup for `com.apple.dt.Xcode` found no full Xcode install.
-- `EndlessActivity.xcodeproj/project.pbxproj` lints successfully.
-- Asset catalog manifests parse as valid JSON.
-- Phase 3 must not begin until the simulator build/test gate can run.
+Completion verification, 2026-06-27:
+- Full Xcode 26.6 is selected at `/Applications/Xcode.app/Contents/Developer`.
+- Simulator builds pass on iPhone 17e and iPhone 17 Pro Max with iOS 26.5.
+- Unit and UI tests pass on the iPhone 17e simulator.
+- Discover, Saved, and Preferences placeholders remain explicitly tracked in `docs/UNFINISHED_SURFACES_AUDIT.md` for later phases.
 
 ## Phase 3: Activity Data, Persistence, and Ranking
+
+Status: complete.
 
 Primary skill:
 - No visual skill required.
@@ -146,7 +146,16 @@ Acceptance gate:
 - Ranking and filtering tests pass.
 - Bad catalog records fail validation in tests.
 
+Completion verification, 2026-06-27:
+- The bundled `activities.json` contains the locked 50 unique activities and passes catalog validation.
+- Codable activity, preferences, and signal models compile under Swift 6.
+- UserDefaults-backed saved, skipped, completed, and preference state survives store recreation.
+- Filtering, exclusion, saved-category/tag boosts, seeded bucket ordering, reset behavior, and invalid catalog records are covered by passing tests.
+- Verification: `xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test`.
+
 ## Phase 4: Discover Swipe Experience
+
+Status: not started. This is the next roadmap phase.
 
 Primary skills:
 - `imagegen-frontend-mobile`

@@ -16,6 +16,14 @@
 		EA0000000000000000000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000107 /* Assets.xcassets */; };
 		EA0000000000000000000008 /* EndlessActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000108 /* EndlessActivityTests.swift */; };
 		EA0000000000000000000009 /* EndlessActivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000109 /* EndlessActivityUITests.swift */; };
+		EA0000000000000000000010 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000110 /* Activity.swift */; };
+		EA0000000000000000000011 /* ActivityPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000111 /* ActivityPreferences.swift */; };
+		EA0000000000000000000012 /* UserActivitySignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000112 /* UserActivitySignal.swift */; };
+		EA0000000000000000000013 /* ActivityCatalogLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000113 /* ActivityCatalogLoader.swift */; };
+		EA0000000000000000000014 /* ActivityPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000114 /* ActivityPersistenceStore.swift */; };
+		EA0000000000000000000015 /* ActivityRankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000115 /* ActivityRankingService.swift */; };
+		EA0000000000000000000016 /* activities.json in Resources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000116 /* activities.json */; };
+		EA0000000000000000000017 /* activities.json in Resources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000116 /* activities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,13 @@
 		EA0000000000000000000107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA0000000000000000000108 /* EndlessActivityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessActivityTests.swift; sourceTree = "<group>"; };
 		EA0000000000000000000109 /* EndlessActivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessActivityUITests.swift; sourceTree = "<group>"; };
+		EA0000000000000000000110 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		EA0000000000000000000111 /* ActivityPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPreferences.swift; sourceTree = "<group>"; };
+		EA0000000000000000000112 /* UserActivitySignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivitySignal.swift; sourceTree = "<group>"; };
+		EA0000000000000000000113 /* ActivityCatalogLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCatalogLoader.swift; sourceTree = "<group>"; };
+		EA0000000000000000000114 /* ActivityPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPersistenceStore.swift; sourceTree = "<group>"; };
+		EA0000000000000000000115 /* ActivityRankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRankingService.swift; sourceTree = "<group>"; };
+		EA0000000000000000000116 /* activities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activities.json; sourceTree = "<group>"; };
 		EA0000000000000000000501 /* EndlessActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EndlessActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0000000000000000000502 /* EndlessActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EndlessActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0000000000000000000503 /* EndlessActivityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EndlessActivityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				EA0000000000000000000703 /* App */,
+				EA0000000000000000000709 /* Models */,
+				EA0000000000000000000710 /* Services */,
 				EA0000000000000000000704 /* Views */,
 				EA0000000000000000000705 /* Resources */,
 			);
@@ -119,8 +136,29 @@
 			isa = PBXGroup;
 			children = (
 				EA0000000000000000000107 /* Assets.xcassets */,
+				EA0000000000000000000116 /* activities.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000709 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000110 /* Activity.swift */,
+				EA0000000000000000000111 /* ActivityPreferences.swift */,
+				EA0000000000000000000112 /* UserActivitySignal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA0000000000000000000710 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EA0000000000000000000113 /* ActivityCatalogLoader.swift */,
+				EA0000000000000000000114 /* ActivityPersistenceStore.swift */,
+				EA0000000000000000000115 /* ActivityRankingService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EA0000000000000000000706 /* EndlessActivityTests */ = {
@@ -254,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA0000000000000000000007 /* Assets.xcassets in Resources */,
+				EA0000000000000000000016 /* activities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0000000000000000000017 /* activities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +324,12 @@
 				EA0000000000000000000004 /* DiscoverView.swift in Sources */,
 				EA0000000000000000000005 /* SavedView.swift in Sources */,
 				EA0000000000000000000006 /* PreferencesView.swift in Sources */,
+				EA0000000000000000000010 /* Activity.swift in Sources */,
+				EA0000000000000000000011 /* ActivityPreferences.swift in Sources */,
+				EA0000000000000000000012 /* UserActivitySignal.swift in Sources */,
+				EA0000000000000000000013 /* ActivityCatalogLoader.swift in Sources */,
+				EA0000000000000000000014 /* ActivityPersistenceStore.swift in Sources */,
+				EA0000000000000000000015 /* ActivityRankingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

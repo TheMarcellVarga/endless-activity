@@ -48,6 +48,8 @@ Use `design-taste-frontend` as a review checklist after the first screens exist.
 
 ## Phase 3: Activity Data, Persistence, and Ranking
 
+Status: complete on 2026-06-27.
+
 Create:
 - `Activity` model
 - `ActivityPreferences` model
@@ -118,10 +120,8 @@ Finish:
 
 ## Verification Commands
 
-Add exact commands after Xcode project creation. Expected shape:
-
 ```bash
-xcodebuild -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
 ```
 
 ## Implementation Defaults

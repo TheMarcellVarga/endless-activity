@@ -6,7 +6,7 @@ The repo is currently in planning-first mode. App implementation should follow t
 
 ## Current Status
 
-Roadmap phase: Phase 2 SwiftUI app scaffold in progress. The project scaffold exists; simulator build verification remains blocked because full Xcode is not installed or discoverable on this machine.
+Roadmap phase: Phase 4 Discover swipe experience is next. Phases 2 and 3 are complete: the native scaffold builds on small and large iPhone simulators, and the bundled catalog, persistence, filtering, ranking, and tests are implemented.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -16,7 +16,7 @@ Created planning artifacts:
 - [Codex skills routing](docs/CODEX_SKILLS.md)
 - Product, architecture, data, ranking, design, privacy, testing, demo, and case-study docs under [docs](docs)
 
-Do not start Phase 3 until the Phase 2 simulator build gate passes with full Xcode selected. Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
+Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
 
 Created app scaffold:
 - `EndlessActivity.xcodeproj`
@@ -24,6 +24,13 @@ Created app scaffold:
 - Native Discover, Saved, and Preferences tab placeholders
 - Asset catalog placeholder
 - XCTest and XCUITest targets
+
+Completed Phase 3 foundation:
+- Codable activity, preferences, and user-signal models
+- Bundled, validated catalog of 50 curated activities
+- UserDefaults-backed local persistence
+- Deterministic filtering and seeded rule-based ranking
+- Unit coverage for catalog validation, filters, ranking, persistence, and resets
 
 ## Product Direction
 
@@ -121,11 +128,12 @@ Open `EndlessActivity.xcodeproj` in Xcode and run the `EndlessActivity` scheme.
 Command-line build after full Xcode is selected:
 
 ```bash
-xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' build
-xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' build
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.5' build
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
 ```
 
-Current local blocker verified on 2026-06-26: this machine has Command Line Tools selected and no full Xcode app is discoverable, so `xcodebuild` and `simctl` cannot run here yet.
+These commands passed with Xcode 26.6 on 2026-06-27.
 
 ## Demo Path
 
