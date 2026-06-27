@@ -69,6 +69,8 @@ Add tests for:
 
 ## Phase 4: Discover Swipe Experience
 
+Status: complete on 2026-06-27.
+
 Use `imagegen-frontend-mobile` before finalizing the card visual direction.
 
 Create:
@@ -86,6 +88,13 @@ Test:
 - tap opens detail
 - deck advances correctly
 - gesture cancellation returns card to center
+
+Implemented:
+- observable Discover presentation state backed by the catalog, ranking, and persistence services
+- tactile three-card stack with threshold and projected-velocity gesture commits
+- persistent save/skip actions, haptics, visible alternatives, VoiceOver custom actions, and Reduce Motion support
+- native detail sheet and reset-skipped empty-deck recovery
+- unit tests for deck mutation and refill policy plus UI tests for launch controls and detail presentation
 
 ## Phase 5: Saved, Preferences, and Empty States
 

@@ -1,12 +1,12 @@
 # Endless Activity
 
-Native iOS app plan for a Tinder-style endless scroller for activities. The product helps people who are bored quickly find something realistic to do, save ideas, and tune the feed around time, cost, energy, setting, and mood.
+Native iOS app for a swipe-based activity deck. The product helps people who are bored quickly find something realistic to do, save ideas, and tune the feed around time, cost, energy, setting, and mood.
 
-The repo is currently in planning-first mode. App implementation should follow the roadmap and docs in this repository instead of re-deriving product decisions.
+App implementation follows the roadmap and docs in this repository instead of re-deriving product decisions.
 
 ## Current Status
 
-Roadmap phase: Phase 4 Discover swipe experience is next. Phases 2 and 3 are complete: the native scaffold builds on small and large iPhone simulators, and the bundled catalog, persistence, filtering, ranking, and tests are implemented.
+Roadmap phase: Phase 5 Saved, Preferences, and empty states is next. Phases 2 through 4 are complete: the native scaffold, bundled catalog, persistence, filtering, ranking, and Discover swipe experience are implemented and tested.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -18,10 +18,10 @@ Created planning artifacts:
 
 Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
 
-Created app scaffold:
+Created native app:
 - `EndlessActivity.xcodeproj`
 - `EndlessActivity/App/EndlessActivityApp.swift`
-- Native Discover, Saved, and Preferences tab placeholders
+- Working Discover deck plus Saved and Preferences tab placeholders
 - Asset catalog placeholder
 - XCTest and XCUITest targets
 
@@ -31,6 +31,13 @@ Completed Phase 3 foundation:
 - UserDefaults-backed local persistence
 - Deterministic filtering and seeded rule-based ranking
 - Unit coverage for catalog validation, filters, ranking, persistence, and resets
+
+Completed Phase 4 experience:
+- Ranked stacked-card Discover deck with responsive save/skip gestures
+- Persistent right-save and left-skip actions with haptics and visible alternatives
+- Native activity detail sheet with materials, steps, safety guidance, and save action
+- VoiceOver custom actions, Reduce Motion handling, and large Dynamic Type support
+- Unit and UI coverage for deck behavior, controls, and detail presentation
 
 ## Product Direction
 

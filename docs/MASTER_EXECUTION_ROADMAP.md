@@ -155,7 +155,7 @@ Completion verification, 2026-06-27:
 
 ## Phase 4: Discover Swipe Experience
 
-Status: not started. This is the next roadmap phase.
+Status: complete.
 
 Primary skills:
 - `imagegen-frontend-mobile`
@@ -175,7 +175,19 @@ Acceptance gate:
 - VoiceOver users can save and skip.
 - Deck state does not corrupt catalog data.
 
+Completion verification, 2026-06-27:
+- Discover launches directly into a ranked, stacked activity deck with no onboarding.
+- Right swipe saves, left swipe skips, partial drags spring back, and visible buttons provide equivalent actions.
+- Save and skip persist locally, advance the deck, and leave the source catalog unchanged.
+- Tapping a card opens a native detail sheet with metadata, materials, steps, safety guidance, and save action.
+- Cards expose concise VoiceOver summaries and named Save, Skip, and Show details actions; Reduce Motion bypasses swipe-off animation.
+- Empty deck recovery resets skipped ideas without clearing saved activities.
+- Unit and UI tests pass on iPhone 17e, and visual checks pass on iPhone 17e, iPhone 17 Pro Max, and accessibility extra-extra-large Dynamic Type.
+- Verification: `xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test`.
+
 ## Phase 5: Saved, Preferences, and Empty States
+
+Status: not started. This is the next roadmap phase.
 
 Primary skill:
 - `design-taste-frontend`

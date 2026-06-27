@@ -6,21 +6,21 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 ## Current Status
 
-Phases 2 and 3 are complete. Discover, Saved, and Preferences remain intentionally placeholder views until Phases 4 and 5 connect the verified catalog, persistence, and ranking foundation to the interface.
+Phases 2 through 4 are complete. Discover and activity details are implemented. Saved and Preferences remain intentionally placeholder views until Phase 5 connects them to the verified shared foundation.
 
 ## Placeholder Checklist
 
 Update this list during implementation:
 
-- [ ] Discover placeholder removed.
+- [x] Discover placeholder removed.
 - [ ] Saved placeholder removed.
 - [ ] Preferences placeholder removed.
-- [ ] Activity detail placeholder removed.
+- [x] Activity detail placeholder removed.
 - [x] Demo catalog contains at least 50 real activities.
-- [ ] Empty deck state implemented.
+- [x] Empty deck state implemented.
 - [ ] Empty saved state implemented.
 - [ ] Reset filters implemented.
-- [ ] Reset skipped implemented.
+- [x] Reset skipped implemented.
 - [x] App icon placeholder replaced or documented.
 - [ ] Debug copy removed from user-facing screens.
 - [x] README current status updated.
@@ -28,13 +28,13 @@ Update this list during implementation:
 
 ## Visual Polish Checklist
 
-- [ ] Cards readable on small iPhones.
-- [ ] Dynamic Type checked.
-- [ ] VoiceOver labels added.
-- [ ] Swipe feedback visible.
-- [ ] Button alternatives exist.
-- [ ] No clipped text.
-- [ ] No overlapping controls.
+- [x] Cards readable on small iPhones.
+- [x] Dynamic Type checked for the Discover core flow.
+- [x] VoiceOver labels added to Discover cards and actions.
+- [x] Swipe feedback visible.
+- [x] Button alternatives exist.
+- [x] No clipped text at standard Dynamic Type on small and large iPhones.
+- [x] No overlapping controls at standard Dynamic Type on small and large iPhones.
 - [ ] No generic filler activities.
 
 ## Test Checklist
@@ -43,7 +43,7 @@ Update this list during implementation:
 - [x] Ranking tests pass.
 - [x] Persistence tests pass.
 - [ ] UI golden path passes.
-- [ ] Manual simulator demo passes.
+- [x] Phase 4 Discover and detail simulator path passes.
 
 ## Deferred Ideas
 

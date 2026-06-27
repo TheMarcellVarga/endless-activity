@@ -169,6 +169,59 @@ final class EndlessActivityTests: XCTestCase {
         XCTAssertEqual(try recreatedStore.load().preferences, .defaults)
     }
 
+    @MainActor
+    func testDiscoverDeckSaveAndSkipPersistWithoutMutatingCatalog() throws {
+        let suiteName = "DiscoverViewModelTests-\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suiteName))
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+        let store = ActivityPersistenceStore(defaults: defaults, key: "state")
+        let catalog = [
+            makeActivity(id: "creative-first-item-001"),
+            makeActivity(id: "home-second-item-002", category: .home)
+        ]
+        let model = DiscoverViewModel(
+            persistenceStore: store,
+            sessionSeed: 2,
+            loadImmediately: false
+        )
+        model.load(catalog: catalog)
+
+        let savedID = try XCTUnwrap(model.currentActivity?.id)
+        model.saveCurrent()
+        let skippedID = try XCTUnwrap(model.currentActivity?.id)
+        model.skipCurrent()
+
+        XCTAssertEqual(model.catalog, catalog)
+        XCTAssertTrue(model.deck.isEmpty)
+        XCTAssertEqual(try store.load().savedIDs, [savedID])
+        XCTAssertEqual(try store.load().skippedIDs, [skippedID])
+    }
+
+    @MainActor
+    func testDiscoverResetSkippedRefillsDeckButKeepsSavedExcluded() throws {
+        let suiteName = "DiscoverResetTests-\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suiteName))
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+        let store = ActivityPersistenceStore(defaults: defaults, key: "state")
+        let saved = makeActivity(id: "creative-saved-item-001")
+        let skipped = makeActivity(id: "home-skipped-item-002", category: .home)
+        let model = DiscoverViewModel(
+            persistenceStore: store,
+            sessionSeed: 4,
+            loadImmediately: false
+        )
+        model.load(
+            catalog: [saved, skipped],
+            state: PersistedActivityState(savedIDs: [saved.id], skippedIDs: [skipped.id])
+        )
+
+        XCTAssertTrue(model.deck.isEmpty)
+        model.resetSkipped()
+
+        XCTAssertEqual(model.deck.map(\.id), [skipped.id])
+        XCTAssertEqual(try store.load().savedIDs, [saved.id])
+    }
+
     private func makeActivity(
         id: String,
         category: ActivityCategory = .creative,
