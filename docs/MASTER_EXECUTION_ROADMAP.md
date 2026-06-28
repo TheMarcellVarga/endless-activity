@@ -218,7 +218,7 @@ Completion verification, 2026-06-27:
 
 ## Phase 6: Testing, Polish, Demo, and Case Study
 
-Status: next.
+Status: complete.
 
 Primary skills:
 - `brandkit`
@@ -240,3 +240,11 @@ Acceptance gate:
 - Manual demo path passes.
 - Placeholder audit is resolved or explicitly deferred.
 - Case study explains product, architecture, skill usage, and tradeoffs.
+
+Completion verification, 2026-06-28:
+- The full iPhone 17e suite passes with 12 unit tests and 7 UI tests, including swipe-left, swipe-right, Saved, Preferences, details, and relaunch persistence coverage.
+- The app builds on iPhone 17 Pro Max with iOS 26.5.
+- Four standard-size iPhone 17e simulator screenshots document Discover, activity detail, Saved, and Preferences using the implemented UI.
+- The demo walkthrough, testing strategy, README, portfolio case study, brand/media references, and unfinished-surface audit reflect the shipped MVP.
+- The 50-item catalog was reviewed for unique IDs, unique titles, concrete actions, and category coverage; no generic filler remains.
+- Verification: `xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test`.

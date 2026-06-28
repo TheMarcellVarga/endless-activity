@@ -122,6 +122,8 @@ Implemented:
 
 ## Phase 6: Testing, Polish, Demo, and Case Study
 
+Status: complete on 2026-06-28.
+
 Use:
 - `brandkit` for final visual presentation.
 - `imagegen-frontend-mobile` for screenshot framing.
@@ -136,6 +138,12 @@ Finish:
 - demo walkthrough
 - portfolio case study
 - unfinished surfaces audit
+
+Completed:
+- expanded UI coverage to include real swipe gestures and relaunch persistence
+- captured four standard-size iPhone 17e simulator screenshots from XCUITest
+- verified the large-device build on iPhone 17 Pro Max
+- finalized the demo walkthrough, testing evidence, README, case study, and unfinished-surface audit
 
 ## Verification Commands
 

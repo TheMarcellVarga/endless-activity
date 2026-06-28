@@ -63,3 +63,16 @@ Manual checks:
 - filters change deck
 - no placeholder copy remains
 - Dynamic Type does not break core screens
+
+## Verified Run
+
+Verified on 2026-06-28 with Xcode 26.6 and the iPhone 17e simulator on iOS 26.5.
+
+- launch opens Discover without onboarding
+- swipe right saves and swipe left skips
+- Saved reflects the saved activity and survives relaunch
+- Preferences persist and reset independently from activity history
+- activity details expose materials and steps
+- standard-size captures show no placeholder copy or clipped controls
+
+The automated suite exercises the interaction path. Haptic feel and spoken VoiceOver output remain device/manual checks before an App Store submission because the simulator cannot prove physical haptic output or listening quality.

@@ -6,7 +6,7 @@ App implementation follows the roadmap and docs in this repository instead of re
 
 ## Current Status
 
-Roadmap phase: Phase 6 testing, polish, demo, and case study is next. Phases 2 through 5 are complete: the native scaffold, bundled catalog, persistence, ranking, Discover deck, Saved list, practical filters, reset flows, and empty states are implemented and tested.
+Roadmap status: Phases 0 through 6 are complete. The native MVP, bundled catalog, persistence, ranking, Discover deck, Saved list, practical filters, reset flows, empty states, tests, simulator captures, demo walkthrough, and portfolio case study are implemented and verified.
 
 Created planning artifacts:
 - [Agent instructions](AGENTS.md)
@@ -46,6 +46,13 @@ Completed Phase 5 experience:
 - Useful Saved and Discover empty states with explicit recovery actions
 - Separate filter reset and confirmed activity-history reset flows
 - Unit and UI coverage for Saved and Preferences behavior
+
+Completed Phase 6 release pass:
+- 12 passing unit tests and 7 passing UI tests on iPhone 17e
+- Gesture and relaunch-persistence UI coverage
+- Passing iPhone 17 Pro Max build
+- Real simulator captures for Discover, activity detail, Saved, and Preferences
+- Finalized demo walkthrough, case study, testing evidence, and unfinished-surface audit
 
 ## Product Direction
 
@@ -148,7 +155,13 @@ xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destinati
 xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
 ```
 
-These commands passed with Xcode 26.6 on 2026-06-27.
+These commands passed with Xcode 26.6 on 2026-06-28.
+
+## Implemented Screens
+
+![Discover activity deck](docs/assets/phase-6/screenshots/01-discover.png)
+
+Additional captures: [activity detail](docs/assets/phase-6/screenshots/02-activity-detail.png), [Saved](docs/assets/phase-6/screenshots/03-saved.png), and [Preferences](docs/assets/phase-6/screenshots/04-preferences.png).
 
 ## Demo Path
 

@@ -93,11 +93,20 @@ Test on:
 
 ## Verification Command
 
-Add exact command after the Xcode project exists:
-
 ```bash
-xcodebuild -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.5' build
 ```
+
+## Phase 6 Result
+
+Verified on 2026-06-28 with Xcode 26.6:
+
+- 12 unit tests passed.
+- 7 UI tests passed.
+- UI coverage includes direct controls, left/right swipes, details, Saved removal, Preferences reset, relaunch persistence, and deterministic screenshot capture.
+- The iPhone 17 Pro Max build passed.
+- Four iPhone 17e screenshots were captured at standard Dynamic Type in light appearance.
 
 ## Completion Gate
 

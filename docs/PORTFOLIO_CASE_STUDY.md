@@ -24,6 +24,16 @@ The MVP avoids accounts, location, AI generation, and live events. That keeps th
 - Preferences shape the deck.
 - Saved list turns browsing into action.
 
+## Implemented Screens
+
+| Discover | Activity detail |
+| --- | --- |
+| ![Discover activity deck](assets/phase-6/screenshots/01-discover.png) | ![Activity details](assets/phase-6/screenshots/02-activity-detail.png) |
+
+| Saved | Preferences |
+| --- | --- |
+| ![Saved activities](assets/phase-6/screenshots/03-saved.png) | ![Practical filters](assets/phase-6/screenshots/04-preferences.png) |
+
 ## Technical Decisions
 
 - SwiftUI for native interaction.
@@ -31,6 +41,21 @@ The MVP avoids accounts, location, AI generation, and live events. That keeps th
 - Local persistence for saved/skipped/preferences.
 - Rule-based ranking for transparent behavior.
 - XCTest and XCUITest for core loop coverage.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  UI["SwiftUI views"] --> VM["Observable presentation state"]
+  VM --> Catalog["Bundled catalog loader"]
+  VM --> Ranking["Pure ranking service"]
+  VM --> Store["UserDefaults persistence"]
+  Catalog --> JSON["50 deterministic JSON activities"]
+  Ranking --> Models["Codable activity and preference models"]
+  Store --> Models
+```
+
+The swipe deck owns presentation order while the source catalog remains immutable. Ranking is isolated from SwiftUI, and persistence stores only user signals and practical filters.
 
 ## Codex Skill Usage
 
@@ -58,6 +83,18 @@ Deferred:
 - location-aware recommendations
 - monetization
 
+Implementation tradeoffs:
+- UserDefaults is sufficient for a compact local signal set, but it is not positioned as a future sync layer.
+- The seeded rule-based ranker is explainable and testable, but intentionally avoids behavioral ML.
+- Bundled JSON makes launches deterministic and offline, at the cost of requiring an app update for new catalog content.
+- Native controls and sheets reduce custom visual freedom, but improve platform familiarity, Dynamic Type behavior, and VoiceOver semantics.
+
+## Verification
+
+The final Phase 6 run on 2026-06-28 passed 12 unit tests and 7 UI tests on iPhone 17e with iOS 26.5. The UI suite covers launch, details, Save/Skip controls, direct left/right swipes, Saved removal, Preferences reset, relaunch persistence, and screenshot capture. An iPhone 17 Pro Max build also passed.
+
+Accessibility implementation includes card summaries, named Save/Skip/detail actions, visible alternatives to gestures, Reduce Motion handling, scrollable accessibility-size Discover content, and standard native control semantics. Physical haptic feel and spoken VoiceOver quality remain manual pre-submission checks.
+
 ## What The Project Demonstrates
 
 - Product scoping.
@@ -70,10 +107,10 @@ Deferred:
 
 ## Final Case Study Checklist
 
-Before using this publicly:
-- add real screenshots
-- add architecture diagram from implemented code
-- add test results
-- add final app icon
-- add demo video or GIF
-- update tradeoffs with actual implementation notes
+- [x] Real implementation screenshots.
+- [x] Architecture diagram from implemented code.
+- [x] Final test results.
+- [x] Final app icon.
+- [x] Implementation-specific tradeoffs.
+
+Optional extension: add a demo video or GIF if a separate portfolio landing page is built.

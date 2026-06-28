@@ -117,6 +117,14 @@ Screenshots should show:
 
 The Discover screenshot should be image-led and practical: title, duration, cost, energy, setting, and visible skip/save affordances. Preferences should use native controls, chips, segmented options, or toggles rather than a long form.
 
+Phase 6 implementation captures:
+- [Discover](assets/phase-6/screenshots/01-discover.png)
+- [Activity detail](assets/phase-6/screenshots/02-activity-detail.png)
+- [Saved](assets/phase-6/screenshots/03-saved.png)
+- [Preferences](assets/phase-6/screenshots/04-preferences.png)
+
+These are real iPhone 17e simulator captures at standard Dynamic Type. Their framing follows the mobile skill's content-first direction: consistent device size, readable text, controlled palette, and no synthetic UI elements.
+
 ## Case Study Assets
 
 Use `brandkit` for:

@@ -6,7 +6,7 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 ## Current Status
 
-Phases 2 through 5 are complete. Discover, activity details, Saved, Preferences, and their recovery states are connected to the local persistence and ranking foundation. Phase 6 owns final testing, presentation, and release polish.
+Phases 0 through 6 are complete. Discover, activity details, Saved, Preferences, and their recovery states are connected to the local persistence and ranking foundation. Phase 6 testing and presentation evidence is recorded in the roadmap, demo walkthrough, case study, and screenshot assets.
 
 ## Placeholder Checklist
 
@@ -24,7 +24,7 @@ Update this list during implementation:
 - [x] App icon placeholder replaced or documented.
 - [x] Debug copy removed from user-facing screens.
 - [x] README current status updated.
-- [ ] Demo walkthrough verified.
+- [x] Demo walkthrough verified.
 
 ## Visual Polish Checklist
 
@@ -35,7 +35,7 @@ Update this list during implementation:
 - [x] Button alternatives exist.
 - [x] No clipped text at standard Dynamic Type on small and large iPhones.
 - [x] No overlapping controls at standard Dynamic Type on small and large iPhones.
-- [ ] No generic filler activities.
+- [x] No generic filler activities.
 
 ## Test Checklist
 
@@ -44,6 +44,9 @@ Update this list during implementation:
 - [x] Persistence tests pass.
 - [x] UI golden path passes.
 - [x] Phase 4 Discover and detail simulator path passes.
+- [x] Swipe-left and swipe-right UI paths pass.
+- [x] Relaunch persistence UI path passes.
+- [x] iPhone 17 Pro Max build passes.
 
 ## Deferred Ideas
 
@@ -54,5 +57,6 @@ Record future ideas here instead of slipping them into MVP:
 - group planning
 - shared saved lists
 - local event APIs
-- App Store screenshots
 - portfolio landing page
+
+The separate portfolio landing page and demo video/GIF remain optional presentation extensions. They are not part of the native iOS MVP acceptance gate.

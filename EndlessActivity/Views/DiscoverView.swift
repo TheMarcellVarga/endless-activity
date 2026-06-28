@@ -299,7 +299,7 @@ struct DiscoverView: View {
         isCommittingSwipe = true
         let direction: CGFloat = action == .save ? 1 : -1
         if action == .save { model.saveCurrent() } else { model.skipCurrent() }
-        let finish = {
+        let finish: @MainActor @Sendable () -> Void = {
             dragOffset = .zero
             isCommittingSwipe = false
         }
@@ -377,6 +377,7 @@ private struct ActivityCardView: View {
         }
         .shadow(color: AppTheme.ink.opacity(0.12), radius: 24, x: 0, y: 14)
         .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier("activityCardContent")
         .accessibilityLabel(activity.accessibilitySummary)
         .accessibilityHint("Double tap for details. Use the Save or Skip actions to continue.")
     }
