@@ -31,6 +31,7 @@ Update this list during implementation:
 - [x] Cards readable on small iPhones.
 - [x] Dynamic Type checked for the Discover core flow.
 - [x] VoiceOver labels added to Discover cards and actions.
+- [x] Background deck cards excluded from VoiceOver focus.
 - [x] Swipe feedback visible.
 - [x] Button alternatives exist.
 - [x] No clipped text at standard Dynamic Type on small and large iPhones.

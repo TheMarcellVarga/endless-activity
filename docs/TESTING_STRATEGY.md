@@ -105,6 +105,7 @@ Verified on 2026-06-28 with Xcode 26.6:
 - 12 unit tests passed.
 - 7 UI tests passed.
 - UI coverage includes direct controls, left/right swipes, details, Saved removal, Preferences reset, relaunch persistence, and deterministic screenshot capture.
+- The current-card accessibility label is used to verify that a swipe advances the deck; stacked background cards are excluded from the accessibility tree.
 - The iPhone 17 Pro Max build passed.
 - Four iPhone 17e screenshots were captured at standard Dynamic Type in light appearance.
 

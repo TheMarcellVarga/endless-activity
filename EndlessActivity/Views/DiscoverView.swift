@@ -224,13 +224,16 @@ struct DiscoverView: View {
                     .rotationEffect(index == 0 ? .degrees(Double(dragOffset.width / 24)) : .zero)
                     .zIndex(Double(3 - index))
                     .allowsHitTesting(index == 0)
+                    .accessibilityHidden(index != 0)
             }
         }
         .contentShape(Rectangle())
         .onTapGesture { model.selectedActivity = activity }
         .gesture(dragGesture)
-        .accessibilityElement(children: .contain)
+        .accessibilityElement(children: .ignore)
         .accessibilityIdentifier("activityCard")
+        .accessibilityLabel(activity.accessibilitySummary)
+        .accessibilityHint("Double tap for details. Use the Save or Skip actions to continue.")
         .accessibilityAction(named: "Save") { commit(.save) }
         .accessibilityAction(named: "Skip") { commit(.skip) }
         .accessibilityAction(named: "Show details") { model.selectedActivity = activity }

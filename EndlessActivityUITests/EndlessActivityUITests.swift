@@ -45,13 +45,11 @@ final class EndlessActivityUITests: XCTestCase {
         let card = app.otherElements["activityCard"]
         XCTAssertTrue(card.waitForExistence(timeout: 5))
 
-        let cardContent = app.otherElements["activityCardContent"]
-        XCTAssertTrue(cardContent.waitForExistence(timeout: 3))
-        let firstActivity = cardContent.label
+        let firstActivity = card.label
 
         card.swipeLeft()
         XCTAssertTrue(card.waitForExistence(timeout: 3))
-        XCTAssertNotEqual(cardContent.label, firstActivity)
+        XCTAssertNotEqual(card.label, firstActivity)
 
         card.swipeRight()
         app.tabBars.buttons["Saved"].tap()
