@@ -8,6 +8,10 @@ Track placeholders, rough edges, and incomplete flows. Do not ship or present th
 
 Phases 0 through 6 are complete. Discover, activity details, Saved, Preferences, and their recovery states are connected to the local persistence and ranking foundation. Phase 6 testing and presentation evidence is recorded in the roadmap, demo walkthrough, case study, and screenshot assets.
 
+The post-roadmap supporting case study is implemented in
+`personal-portfolio-v.2` with the verified Phase 6 media and an expanded source
+narrative in `docs/PORTFOLIO_CASE_STUDY.md`.
+
 ## Placeholder Checklist
 
 Update this list during implementation:
@@ -59,6 +63,3 @@ Record future ideas here instead of slipping them into MVP:
 - group planning
 - shared saved lists
 - local event APIs
-- portfolio landing page
-
-The separate portfolio landing page remains an optional presentation extension.

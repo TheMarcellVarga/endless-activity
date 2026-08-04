@@ -249,3 +249,33 @@ Completion verification, 2026-06-28:
 - The demo walkthrough, testing strategy, README, portfolio case study, brand/media references, and unfinished-surface audit reflect the shipped MVP.
 - The 50-item catalog was reviewed for unique IDs, unique titles, concrete actions, and category coverage; no generic filler remains.
 - Verification: `xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test`.
+
+## Post-Roadmap Portfolio Integration
+
+Status: complete on 2026-08-04.
+
+Primary skill:
+- `gpt-taste`
+
+Deliverables:
+- Dedicated supporting case-study route in `personal-portfolio-v.2`.
+- Three-featured/two-supporting portfolio hierarchy that keeps Endless Activity
+  out of the flagship tier.
+- Real app icon, simulator captures, and 24-second walkthrough reused from this
+  repository.
+- Evidence record covering role, user, decisions, verification, and limitations.
+- Expanded source case-study narrative in `docs/PORTFOLIO_CASE_STUDY.md`.
+
+Acceptance gate:
+- The page strengthens product-focused frontend and product-engineering
+  positioning without overstating distribution or user evidence.
+- Current media and repository evidence support every material claim.
+- Desktop and mobile layouts remain readable with reduced-motion support.
+- Portfolio lint, production build, browser tests, links, metadata, and
+  automated accessibility checks pass.
+
+Completion verification, 2026-08-04:
+- `npm run check` passed in `personal-portfolio-v.2`.
+- All 18 Playwright tests passed, including the Endless Activity route, mobile
+  overflow, reduced motion, canonical metadata, sitemap, internal links, and
+  serious/critical Axe checks across public routes.
