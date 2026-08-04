@@ -142,6 +142,7 @@ Finish:
 Completed:
 - expanded UI coverage to include real swipe gestures and relaunch persistence
 - captured four standard-size iPhone 17e simulator screenshots from XCUITest
+- added a 24-second screen walkthrough assembled from the verified simulator captures
 - verified the large-device build on iPhone 17 Pro Max
 - finalized the demo walkthrough, testing evidence, README, case study, and unfinished-surface audit
 

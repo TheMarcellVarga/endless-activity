@@ -113,4 +113,6 @@ Accessibility implementation includes card summaries, named Save/Skip/detail act
 - [x] Final app icon.
 - [x] Implementation-specific tradeoffs.
 
-Optional extension: add a demo video or GIF if a separate portfolio landing page is built.
+[Recorded 24-second screen walkthrough](assets/phase-6/endless-activity-demo.mp4) is
+included as a lightweight presentation artifact. A separate portfolio landing
+page remains optional.

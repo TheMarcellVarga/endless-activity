@@ -25,6 +25,7 @@ Update this list during implementation:
 - [x] Debug copy removed from user-facing screens.
 - [x] README current status updated.
 - [x] Demo walkthrough verified.
+- [x] 24-second screen walkthrough linked from the presentation docs.
 
 ## Visual Polish Checklist
 
@@ -60,4 +61,4 @@ Record future ideas here instead of slipping them into MVP:
 - local event APIs
 - portfolio landing page
 
-The separate portfolio landing page and demo video/GIF remain optional presentation extensions. They are not part of the native iOS MVP acceptance gate.
+The separate portfolio landing page remains an optional presentation extension.

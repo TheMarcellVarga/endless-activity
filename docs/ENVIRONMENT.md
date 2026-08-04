@@ -2,7 +2,10 @@
 
 ## Current State
 
-The repository contains the verified SwiftUI scaffold and the complete Phase 3 data, persistence, ranking, catalog, and test foundation. Phase 4 is next.
+The repository contains the complete Phase 0 through Phase 6 native SwiftUI
+MVP: bundled catalog, deterministic ranking, local persistence, swipe deck,
+Saved and Preferences flows, accessibility support, tests, screenshots, and
+presentation documentation.
 
 ## Required Tools
 
@@ -12,15 +15,15 @@ Expected implementation environment:
 - iOS Simulator.
 - Swift current stable toolchain bundled with Xcode.
 
-Last checked on 2026-06-27:
+Last full simulator verification: 2026-06-28:
 
 ```text
-Xcode: 26.6 (build 17F113), selected at /Applications/Xcode.app/Contents/Developer
+Xcode: 26.6 (build 17F113)
 Swift: Apple Swift version 6.3.2
 iOS deployment target: 17.0
 Small simulator: iPhone 17e, iOS 26.5
 Large simulator: iPhone 17 Pro Max, iOS 26.5
-Latest test result: 9 tests passed (8 unit, 1 UI)
+Latest test result: 12 unit tests and 7 UI tests passed
 ```
 
 ## Repository Assets
@@ -42,7 +45,7 @@ Docs:
 
 ## Planned Project Layout
 
-Suggested layout after scaffold:
+Current project layout:
 
 ```text
 EndlessActivity.xcodeproj
@@ -50,7 +53,6 @@ EndlessActivity/
   App/
   Models/
   Services/
-  ViewModels/
   Views/
   Resources/
     activities.json
@@ -58,7 +60,7 @@ EndlessActivityTests/
 EndlessActivityUITests/
 ```
 
-Adjust to the actual Xcode structure after creation and update this doc.
+Presentation models live beside their SwiftUI screens in `Views/`.
 
 ## Build Commands
 
@@ -74,7 +76,9 @@ If `xcodebuild` reports that the active developer directory is Command Line Tool
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
-These commands passed on 2026-06-27. The debugger-version warning printed during simulator startup is non-fatal; XCTest completed successfully.
+These commands passed on 2026-06-28 with Xcode 26.6. The current audit
+environment has Swift 6.3.3 but no full Xcode installation, so `xcodebuild`
+and `simctl` require Xcode to be installed before they can be rerun.
 
 ## Environment Variables
 

@@ -1,187 +1,107 @@
 # Endless Activity
 
-Native iOS app for a swipe-based activity deck. The product helps people who are bored quickly find something realistic to do, save ideas, and tune the feed around time, cost, energy, setting, and mood.
+Endless Activity is a native iOS swipe deck for finding something realistic to
+do when you are bored. Swipe right to save an idea, swipe left to skip it, and
+use practical filters for time, cost, energy, setting, company, and category.
 
-App implementation follows the roadmap and docs in this repository instead of re-deriving product decisions.
+## Current status
 
-## Current Status
+Roadmap Phases 0 through 6 are complete. The MVP is local-first, offline after
+install, and intentionally focused on solo discovery with a bundled catalog.
 
-Roadmap status: Phases 0 through 6 are complete. The native MVP, bundled catalog, persistence, ranking, Discover deck, Saved list, practical filters, reset flows, empty states, tests, simulator captures, demo walkthrough, and portfolio case study are implemented and verified.
+- 50 validated activities with deterministic rule-based ranking.
+- Local saved, skipped, completed, and preference state.
+- Discover deck with swipe gestures, haptics, detail sheets, and empty states.
+- Saved list with removal and native detail presentation.
+- Preferences with persistent filters and confirmed history reset.
+- VoiceOver actions, button alternatives, Reduce Motion, and large text paths.
+- 12 unit tests, 7 UI tests, four simulator screenshots, and a 24-second demo.
 
-Created planning artifacts:
-- [Agent instructions](AGENTS.md)
-- [Workspace plan](EndlessActivityWorkspacePlan.md)
-- [Markdown docs plan](EndlessActivityMarkdownDocsPlan.md)
-- [Master execution roadmap](docs/MASTER_EXECUTION_ROADMAP.md)
-- [Codex skills routing](docs/CODEX_SKILLS.md)
-- Product, architecture, data, ranking, design, privacy, testing, demo, and case-study docs under [docs](docs)
+The last full simulator verification passed on 2026-06-28 with Xcode 26.6 on
+iPhone 17e and iPhone 17 Pro Max. A fresh simulator run requires full Xcode.
 
-Keep the Phase 1 product, brand, schema, and catalog decisions fixed unless the roadmap is updated first.
+## Product workflow
 
-Created native app:
-- `EndlessActivity.xcodeproj`
-- `EndlessActivity/App/EndlessActivityApp.swift`
-- Working Discover, Saved, and Preferences tabs
-- Asset catalog placeholder
-- XCTest and XCUITest targets
+1. Launch directly into Discover.
+2. Swipe right to save or left to skip.
+3. Tap a card for materials, steps, and safety guidance.
+4. Adjust practical filters in Preferences.
+5. Open Saved and relaunch to confirm local state persists.
 
-Completed Phase 3 foundation:
-- Codable activity, preferences, and user-signal models
-- Bundled, validated catalog of 50 curated activities
-- UserDefaults-backed local persistence
-- Deterministic filtering and seeded rule-based ranking
-- Unit coverage for catalog validation, filters, ranking, persistence, and resets
-
-Completed Phase 4 experience:
-- Ranked stacked-card Discover deck with responsive save/skip gestures
-- Persistent right-save and left-skip actions with haptics and visible alternatives
-- Native activity detail sheet with materials, steps, safety guidance, and save action
-- VoiceOver custom actions, Reduce Motion handling, and large Dynamic Type support
-- Unit and UI coverage for deck behavior, controls, and detail presentation
-
-Completed Phase 5 experience:
-- Persistence-backed Saved list with native details and removal actions
-- Duration, cost, energy, setting, company, and category preferences
-- Immediate filter persistence with Discover refresh on tab activation
-- Useful Saved and Discover empty states with explicit recovery actions
-- Separate filter reset and confirmed activity-history reset flows
-- Unit and UI coverage for Saved and Preferences behavior
-
-Completed Phase 6 release pass:
-- 12 passing unit tests and 7 passing UI tests on iPhone 17e
-- Gesture and relaunch-persistence UI coverage
-- Passing iPhone 17 Pro Max build
-- Real simulator captures for Discover, activity detail, Saved, and Preferences
-- Finalized demo walkthrough, case study, testing evidence, and unfinished-surface audit
-
-## Product Direction
-
-Final working name: Endless Activity.
-
-One sentence: Endless Activity is a native iOS swipe deck for finding something realistic to do when you are bored.
-
-MVP boundary:
-- Solo user experience.
-- Native SwiftUI.
-- Curated bundled activity catalog.
-- Local persistence.
-- Swipe right to save.
-- Swipe left to skip.
-- No account, backend, monetization, social planning, live event APIs, or required location permission in v1.
-
-## Planned Stack
-
-- SwiftUI for app UI.
-- Swift 6 or current stable Xcode Swift toolchain.
-- iOS 17+ target unless the implementation phase changes this.
-- Local bundled JSON for the activity catalog.
-- Codable models for catalog decoding.
-- SwiftData or lightweight file/UserDefaults persistence, chosen during Phase 2 based on scaffold needs.
-- XCTest for unit tests.
-- XCUITest for golden-path interaction tests.
-
-## Codex Skills
-
-This repo includes local Codex skills in [.agents/skills](.agents/skills). Future agents should use them as documented in [docs/CODEX_SKILLS.md](docs/CODEX_SKILLS.md).
-
-Available skills:
-- `brandkit`
-- `design-taste-frontend`
-- `gpt-taste`
-- `imagegen-frontend-mobile`
-- `imagegen-frontend-web`
-
-Default routing:
-- Brand identity and case-study visuals: `brandkit`.
-- Native iOS visual references: `imagegen-frontend-mobile`.
-- App layout and polish review: `design-taste-frontend`.
-- High-intensity marketing/case-study page direction: `gpt-taste`.
-- Website or portfolio landing-page references: `imagegen-frontend-web`.
-
-## Source Of Truth
-
-Read these before implementation:
-
-1. [Master execution roadmap](docs/MASTER_EXECUTION_ROADMAP.md)
-2. [Codex skills routing](docs/CODEX_SKILLS.md)
-3. [Workspace plan](EndlessActivityWorkspacePlan.md)
-4. [Product spec](docs/PRODUCT_SPEC.md)
-5. [Implementation plan](docs/IMPLEMENTATION_PLAN.md)
-6. Relevant subsystem docs in [docs](docs)
-
-## Documentation Map
-
-- [Product spec](docs/PRODUCT_SPEC.md)
-- [Implementation plan](docs/IMPLEMENTATION_PLAN.md)
-- [Master roadmap](docs/MASTER_EXECUTION_ROADMAP.md)
-- [Codex skills](docs/CODEX_SKILLS.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Data model](docs/DATA_MODEL.md)
-- [Activity catalog guide](docs/ACTIVITY_CATALOG_GUIDE.md)
-- [Ranking and personalization](docs/RANKING_AND_PERSONALIZATION.md)
-- [Design system](docs/DESIGN_SYSTEM.md)
-- [Brand and media](docs/BRAND_AND_MEDIA.md)
-- [Privacy and safety](docs/PRIVACY_AND_SAFETY.md)
-- [Testing strategy](docs/TESTING_STRATEGY.md)
-- [Environment](docs/ENVIRONMENT.md)
-- [Demo walkthrough](docs/DEMO_WALKTHROUGH.md)
-- [Portfolio case study](docs/PORTFOLIO_CASE_STUDY.md)
-- [Unfinished surfaces audit](docs/UNFINISHED_SURFACES_AUDIT.md)
-
-## Architecture At A Glance
+## Architecture
 
 ```mermaid
 flowchart LR
-  App["SwiftUI App"] --> Store["App Store / Observable State"]
-  Store --> Catalog["Bundled Activity JSON"]
-  Store --> Ranking["Rule-Based Ranking"]
-  Store --> Persistence["Local Persistence"]
-  App --> Discover["Discover Swipe Deck"]
-  App --> Saved["Saved Activities"]
-  App --> Preferences["Preferences"]
-  Discover --> Detail["Activity Detail"]
+  App["SwiftUI App"] --> State["Observable presentation state"]
+  State --> Catalog["Bundled JSON catalog"]
+  State --> Ranking["Pure rule-based ranking"]
+  State --> Persistence["UserDefaults persistence"]
+  State --> Discover["Discover deck"]
+  State --> Saved["Saved list"]
+  State --> Preferences["Preferences"]
+  Discover --> Detail["Activity detail"]
   Saved --> Detail
 ```
 
-## Local Development
+Implementation is split across Codable models, catalog loading, ranking,
+persistence, and SwiftUI presentation state. The deck owns presentation order;
+the source catalog remains unchanged.
 
-Open `EndlessActivity.xcodeproj` in Xcode and run the `EndlessActivity` scheme.
+## Verification
 
-Command-line build after full Xcode is selected:
+Full Xcode verification command:
 
 ```bash
-xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' build
-xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.5' build
 xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test
 ```
 
-These commands passed with Xcode 26.6 on 2026-06-28.
+Large-device build:
 
-## Implemented Screens
+```bash
+xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.5' build
+```
+
+The repository also supports static catalog checks and Swift typechecking of
+the model/service layer without Xcode.
+
+## Screens and demo
 
 ![Discover activity deck](docs/assets/phase-6/screenshots/01-discover.png)
 
-Additional captures: [activity detail](docs/assets/phase-6/screenshots/02-activity-detail.png), [Saved](docs/assets/phase-6/screenshots/03-saved.png), and [Preferences](docs/assets/phase-6/screenshots/04-preferences.png).
+[Activity detail](docs/assets/phase-6/screenshots/02-activity-detail.png) ·
+[Saved](docs/assets/phase-6/screenshots/03-saved.png) ·
+[Preferences](docs/assets/phase-6/screenshots/04-preferences.png)
 
-## Demo Path
+[Download the 24-second screen walkthrough](docs/assets/phase-6/endless-activity-demo.mp4)
 
-The v1 demo should show:
+The walkthrough uses real iPhone 17e simulator captures for Discover, detail,
+Saved, and Preferences. It documents the implemented save, filter, and local
+persistence states without implying an unimplemented backend or live feed.
 
-1. Launch app into Discover.
-2. Swipe right on an appealing activity.
-3. Verify it appears in Saved.
-4. Swipe left on an activity.
-5. Open Preferences and apply a filter.
-6. Return to Discover and see a changed deck.
-7. Open a detail screen with steps, materials, duration, and cost.
-8. Relaunch and confirm saved activities and preferences persist.
+## Scope
 
-## Non-Goals
+The v1 deliberately excludes accounts, backend sync, required location,
+social planning, live events, booking, payments, marketplaces, analytics, and
+AI-generated activities.
 
-- No social graph in v1.
-- No group voting in v1.
-- No activity booking or marketplace in v1.
-- No AI-generated activity feed in v1.
-- No live local event integrations in v1.
-- No required location permission in v1.
-- No backend or account system in v1.
+## Documentation
+
+Start with the [Master Execution Roadmap](docs/MASTER_EXECUTION_ROADMAP.md),
+then read the [Codex skills routing](docs/CODEX_SKILLS.md),
+[Workspace Plan](EndlessActivityWorkspacePlan.md), [Product Spec](docs/PRODUCT_SPEC.md),
+and [Implementation Plan](docs/IMPLEMENTATION_PLAN.md).
+
+Additional references:
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Data Model](docs/DATA_MODEL.md)
+- [Activity Catalog Guide](docs/ACTIVITY_CATALOG_GUIDE.md)
+- [Ranking and Personalization](docs/RANKING_AND_PERSONALIZATION.md)
+- [Design System](docs/DESIGN_SYSTEM.md)
+- [Brand and Media](docs/BRAND_AND_MEDIA.md)
+- [Privacy and Safety](docs/PRIVACY_AND_SAFETY.md)
+- [Testing Strategy](docs/TESTING_STRATEGY.md)
+- [Environment](docs/ENVIRONMENT.md)
+- [Demo Walkthrough](docs/DEMO_WALKTHROUGH.md)
+- [Portfolio Case Study](docs/PORTFOLIO_CASE_STUDY.md)
+- [Unfinished Surfaces Audit](docs/UNFINISHED_SURFACES_AUDIT.md)

@@ -125,6 +125,9 @@ Phase 6 implementation captures:
 
 These are real iPhone 17e simulator captures at standard Dynamic Type. Their framing follows the mobile skill's content-first direction: consistent device size, readable text, controlled palette, and no synthetic UI elements.
 
+The 24-second [screen walkthrough](assets/phase-6/endless-activity-demo.mp4)
+sequences the same verified captures for lightweight portfolio presentation.
+
 ## Case Study Assets
 
 Use `brandkit` for:
