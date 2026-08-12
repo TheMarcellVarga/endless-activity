@@ -105,3 +105,9 @@ Additional references:
 - [Demo Walkthrough](docs/DEMO_WALKTHROUGH.md)
 - [Portfolio Case Study](docs/PORTFOLIO_CASE_STUDY.md)
 - [Unfinished Surfaces Audit](docs/UNFINISHED_SURFACES_AUDIT.md)
+
+## License
+
+No license file is included. The source is available for portfolio review, but
+reuse, redistribution, and derivative works are not granted unless a license is
+added later.
