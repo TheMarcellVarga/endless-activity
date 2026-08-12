@@ -9,43 +9,6 @@ enum AppTheme {
     static let sun = Color(red: 1.0, green: 196 / 255, blue: 0)
 }
 
-struct PlaceholderPanel<Content: View>: View {
-    let title: String
-    let systemImage: String
-    let content: Content
-
-    init(title: String, systemImage: String, @ViewBuilder content: () -> Content) {
-        self.title = title
-        self.systemImage = systemImage
-        self.content = content()
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Image(systemName: systemImage)
-                .font(.system(size: 32, weight: .semibold))
-                .foregroundStyle(AppTheme.actionCoral)
-                .frame(width: 56, height: 56)
-                .background(AppTheme.actionCoral.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
-
-            VStack(alignment: .leading, spacing: 8) {
-                Text(title)
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(AppTheme.ink)
-
-                content
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(20)
-        .background(.white, in: RoundedRectangle(cornerRadius: 8))
-        .shadow(color: AppTheme.ink.opacity(0.08), radius: 18, x: 0, y: 10)
-        .accessibilityElement(children: .combine)
-    }
-}
-
 extension Activity {
     var durationText: String { durationMinutes < 60 ? "\(durationMinutes) min" : "\(durationMinutes / 60) hr" }
     var accessibilitySummary: String {
