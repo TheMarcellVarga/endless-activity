@@ -366,7 +366,7 @@ private struct ActivityCardView: View {
             maxHeight: dynamicTypeSize.isAccessibilitySize ? nil : 500,
             alignment: .leading
         )
-        .background(.white, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .background(.white, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .overlay(alignment: dragOffset.width >= 0 ? .topLeading : .topTrailing) {
             Label(dragOffset.width >= 0 ? "Save" : "Skip", systemImage: dragOffset.width >= 0 ? "bookmark.fill" : "xmark")
                 .font(.headline)
@@ -375,7 +375,7 @@ private struct ActivityCardView: View {
                 .opacity(actionProgress)
         }
         .overlay {
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
+            RoundedRectangle(cornerRadius: 28, style: .continuous)
                 .stroke(AppTheme.ink.opacity(0.08), lineWidth: 1)
         }
         .shadow(color: AppTheme.ink.opacity(0.12), radius: 24, x: 0, y: 14)
