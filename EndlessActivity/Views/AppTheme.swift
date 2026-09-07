@@ -1,12 +1,17 @@
 import SwiftUI
 
 enum AppTheme {
-    static let ink = Color(red: 15 / 255, green: 17 / 255, blue: 19 / 255)
-    static let paper = Color(red: 245 / 255, green: 246 / 255, blue: 247 / 255)
+    static let ink = Color(uiColor: .label)
+    static let paper = Color(uiColor: .systemGroupedBackground)
+    static let raisedSurface = Color(uiColor: .secondarySystemGroupedBackground)
     static let actionCoral = Color(red: 1.0, green: 90 / 255, blue: 79 / 255)
     static let leaf = Color(red: 52 / 255, green: 199 / 255, blue: 89 / 255)
     static let sky = Color(red: 74 / 255, green: 163 / 255, blue: 1.0)
     static let sun = Color(red: 1.0, green: 196 / 255, blue: 0)
+
+    static let cardCornerRadius: CGFloat = 20
+    static let insetCornerRadius: CGFloat = 12
+    static let screenPadding: CGFloat = 20
 }
 
 struct PlaceholderPanel<Content: View>: View {
@@ -26,7 +31,10 @@ struct PlaceholderPanel<Content: View>: View {
                 .font(.system(size: 32, weight: .semibold))
                 .foregroundStyle(AppTheme.actionCoral)
                 .frame(width: 56, height: 56)
-                .background(AppTheme.actionCoral.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
+                .background(
+                    AppTheme.actionCoral.opacity(0.12),
+                    in: RoundedRectangle(cornerRadius: AppTheme.insetCornerRadius, style: .continuous)
+                )
 
             VStack(alignment: .leading, spacing: 8) {
                 Text(title)
@@ -40,9 +48,43 @@ struct PlaceholderPanel<Content: View>: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(20)
-        .background(.white, in: RoundedRectangle(cornerRadius: 8))
+        .background(
+            AppTheme.raisedSurface,
+            in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius, style: .continuous)
+        )
         .shadow(color: AppTheme.ink.opacity(0.08), radius: 18, x: 0, y: 10)
         .accessibilityElement(children: .combine)
+    }
+}
+
+struct ActivityCategoryLabel: View {
+    let category: ActivityCategory
+
+    var body: some View {
+        Label(category.displayName, systemImage: category.systemImage)
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(category.tint)
+    }
+}
+
+struct ActivityMetadataView: View {
+    let activity: Activity
+    var font: Font = .subheadline
+
+    var body: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 16) { labels }
+            VStack(alignment: .leading, spacing: 8) { labels }
+        }
+        .font(font.weight(.medium))
+        .foregroundStyle(.secondary)
+    }
+
+    @ViewBuilder
+    private var labels: some View {
+        Label(activity.durationText, systemImage: "clock")
+        Label(activity.costLevel.displayName, systemImage: "banknote")
+        Label(activity.energyLevel.displayName, systemImage: "bolt")
     }
 }
 

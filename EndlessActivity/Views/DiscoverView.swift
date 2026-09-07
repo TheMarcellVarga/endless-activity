@@ -157,7 +157,7 @@ struct DiscoverView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(AppTheme.paper)
             .navigationTitle("Discover")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .onAppear { model.refresh() }
             .sheet(item: $model.selectedActivity) { activity in
                 ActivityDetailView(
@@ -211,7 +211,7 @@ struct DiscoverView: View {
 
             actionButtons
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, AppTheme.screenPadding)
         .padding(.vertical, 12)
     }
 
@@ -326,9 +326,7 @@ private struct ActivityCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 22) {
             HStack {
-                Label(activity.category.displayName, systemImage: activity.category.systemImage)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(activity.category.tint)
+                ActivityCategoryLabel(category: activity.category)
                 Spacer()
                 Image(systemName: "arrow.up.right")
                     .foregroundStyle(.secondary)
@@ -339,7 +337,7 @@ private struct ActivityCardView: View {
 
             VStack(alignment: .leading, spacing: 12) {
                 Text(activity.title)
-                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                    .font(.largeTitle.weight(.bold))
                     .foregroundStyle(AppTheme.ink)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(activity.summary)
@@ -350,10 +348,7 @@ private struct ActivityCardView: View {
 
             Spacer(minLength: 4)
 
-            ViewThatFits(in: .horizontal) {
-                HStack(spacing: 8) { metadata }
-                VStack(alignment: .leading, spacing: 8) { metadata }
-            }
+            ActivityMetadataView(activity: activity)
 
             Label(activity.setting.displayName, systemImage: activity.setting.systemImage)
                 .font(.subheadline.weight(.medium))
@@ -366,7 +361,10 @@ private struct ActivityCardView: View {
             maxHeight: dynamicTypeSize.isAccessibilitySize ? nil : 500,
             alignment: .leading
         )
-        .background(.white, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
+        .background(
+            AppTheme.raisedSurface,
+            in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius, style: .continuous)
+        )
         .overlay(alignment: dragOffset.width >= 0 ? .topLeading : .topTrailing) {
             Label(dragOffset.width >= 0 ? "Save" : "Skip", systemImage: dragOffset.width >= 0 ? "bookmark.fill" : "xmark")
                 .font(.headline)
@@ -374,37 +372,13 @@ private struct ActivityCardView: View {
                 .padding(16)
                 .opacity(actionProgress)
         }
-        .overlay {
-            RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .stroke(AppTheme.ink.opacity(0.08), lineWidth: 1)
-        }
-        .shadow(color: AppTheme.ink.opacity(0.12), radius: 24, x: 0, y: 14)
+        .shadow(color: AppTheme.ink.opacity(0.1), radius: 18, x: 0, y: 10)
         .accessibilityElement(children: .ignore)
         .accessibilityIdentifier("activityCardContent")
         .accessibilityLabel(activity.accessibilitySummary)
         .accessibilityHint("Double tap for details. Use the Save or Skip actions to continue.")
     }
 
-    @ViewBuilder
-    private var metadata: some View {
-        MetadataLabel(text: activity.durationText, systemImage: "clock")
-        MetadataLabel(text: activity.costLevel.displayName, systemImage: "banknote")
-        MetadataLabel(text: activity.energyLevel.displayName, systemImage: "bolt")
-    }
-}
-
-private struct MetadataLabel: View {
-    let text: String
-    let systemImage: String
-
-    var body: some View {
-        Label(text, systemImage: systemImage)
-            .font(.caption.weight(.semibold))
-            .lineLimit(1)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 8)
-            .background(AppTheme.paper, in: Capsule())
-    }
 }
 
 struct ActivityDetailView: View {
@@ -418,8 +392,7 @@ struct ActivityDetailView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(alignment: .leading, spacing: 10) {
-                        Label(activity.category.displayName, systemImage: activity.category.systemImage)
-                            .foregroundStyle(activity.category.tint)
+                        ActivityCategoryLabel(category: activity.category)
                         Text(activity.title)
                             .font(.largeTitle.bold())
                         Text(activity.summary)
@@ -427,11 +400,7 @@ struct ActivityDetailView: View {
                             .foregroundStyle(.secondary)
                     }
 
-                    HStack(spacing: 8) {
-                        MetadataLabel(text: activity.durationText, systemImage: "clock")
-                        MetadataLabel(text: activity.costLevel.displayName, systemImage: "banknote")
-                        MetadataLabel(text: activity.energyLevel.displayName, systemImage: "bolt")
-                    }
+                    ActivityMetadataView(activity: activity)
 
                     if !activity.materials.isEmpty {
                         DetailSection(title: "What you need", items: activity.materials)
@@ -442,10 +411,13 @@ struct ActivityDetailView: View {
                         Label(safetyNote, systemImage: "shield.checkered")
                             .font(.subheadline)
                             .padding(16)
-                            .background(AppTheme.sun.opacity(0.16), in: RoundedRectangle(cornerRadius: 16))
+                            .background(
+                                AppTheme.sun.opacity(0.16),
+                                in: RoundedRectangle(cornerRadius: AppTheme.insetCornerRadius, style: .continuous)
+                            )
                     }
                 }
-                .padding(20)
+                .padding(AppTheme.screenPadding)
             }
             .background(AppTheme.paper)
             .navigationTitle("Activity details")

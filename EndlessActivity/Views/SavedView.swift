@@ -66,17 +66,20 @@ struct SavedView: View {
                                     Label("Remove", systemImage: "bookmark.slash")
                                 }
                             }
+                            .listRowBackground(AppTheme.raisedSurface)
                         }
                         .onDelete { offsets in
                             offsets.map { model.savedActivities[$0] }.forEach(model.remove)
                         }
                     }
-                    .listStyle(.plain)
+                    .listStyle(.insetGrouped)
+                    .scrollContentBackground(.hidden)
                     .accessibilityIdentifier("savedList")
                 }
             }
             .background(AppTheme.paper)
             .navigationTitle("Saved")
+            .navigationBarTitleDisplayMode(.large)
             .onAppear { model.load() }
             .sheet(item: $selectedActivity) { activity in
                 ActivityDetailView(activity: activity, isSaved: true) {
@@ -91,21 +94,18 @@ private struct SavedActivityRow: View {
     let activity: Activity
 
     var body: some View {
-        HStack(alignment: .top, spacing: 14) {
-            Image(systemName: activity.category.systemImage)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(activity.category.tint)
-                .frame(width: 42, height: 42)
-                .background(activity.category.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 12))
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 6) {
-                Text(activity.title).font(.headline).foregroundStyle(AppTheme.ink)
-                Text(activity.summary).font(.subheadline).foregroundStyle(.secondary).lineLimit(2)
-                Text("\(activity.durationText)  ·  \(activity.costLevel.displayName)  ·  \(activity.energyLevel.displayName)")
-                    .font(.caption.weight(.medium)).foregroundStyle(.secondary)
-            }
+        VStack(alignment: .leading, spacing: 8) {
+            ActivityCategoryLabel(category: activity.category)
+            Text(activity.title)
+                .font(.headline)
+                .foregroundStyle(AppTheme.ink)
+            Text(activity.summary)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+            ActivityMetadataView(activity: activity, font: .caption)
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 6)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(activity.accessibilitySummary)
     }

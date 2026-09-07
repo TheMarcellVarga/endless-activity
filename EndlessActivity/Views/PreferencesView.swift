@@ -75,7 +75,10 @@ struct PreferencesView: View {
                     Text("Resetting history clears saved, skipped, and completed activities. Your filters stay unchanged.")
                 }
             }
+            .scrollContentBackground(.hidden)
+            .background(AppTheme.paper)
             .navigationTitle("Preferences")
+            .navigationBarTitleDisplayMode(.large)
             .onAppear { model.load() }
             .confirmationDialog("Reset all activity history?", isPresented: $showsResetHistoryConfirmation, titleVisibility: .visible) {
                 Button("Reset history", role: .destructive) { model.resetHistory() }
@@ -120,7 +123,10 @@ private struct MultiSelectSection<Value: Hashable & Identifiable>: View where Va
                         if selection.contains(value) { Image(systemName: "checkmark").foregroundStyle(AppTheme.actionCoral) }
                     }
                 }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
                 .accessibilityValue(selection.contains(value) ? "Selected" : "Not selected")
+                .accessibilityAddTraits(selection.contains(value) ? .isSelected : [])
             }
         }
     }

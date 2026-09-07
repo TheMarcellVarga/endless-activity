@@ -6,6 +6,10 @@ Endless Activity should feel native, quick, tactile, and modern. The design shou
 
 Use `imagegen-frontend-mobile` for screen concepts and `design-taste-frontend` for polish review. Translate their guidance into native SwiftUI patterns.
 
+The app uses an Apple-coherent native visual language: system navigation hierarchy,
+grouped surfaces, semantic light/dark backgrounds, SF Symbols, and restrained motion.
+Brand color adds emphasis without replacing familiar iOS structure.
+
 ## Platform
 
 Primary platform:
@@ -37,6 +41,21 @@ Main tabs:
 
 Discover is the default launch tab.
 
+All three root tabs use large navigation titles. Detail sheets use inline titles.
+The tab bar and sheet chrome remain system-owned so they automatically adopt the
+current iOS material and accessibility behavior.
+
+## Shared Visual Tokens
+
+- Page background: semantic system grouped background.
+- Raised surface: semantic secondary grouped background.
+- Primary text: semantic system label color.
+- Main card radius: 20 points, continuous corners.
+- Inset/callout radius: 12 points, continuous corners.
+- Main horizontal page inset: 20 points.
+- Primary action: coral; category colors remain supporting accents.
+- Metadata: one shared icon-and-label row across Discover, Saved, and details.
+
 ## Discover Card
 
 Card content:
@@ -53,12 +72,13 @@ Do not overload cards with all metadata. Detail view can hold steps and material
 
 ## Card Visual Rules
 
-- Radius should feel native and consistent.
+- Use the 20-point main card radius and 12-point inset radius consistently.
 - Use one primary card surface.
 - Avoid nested cards inside the swipe card.
 - Maintain strong title contrast.
 - Use clear save/skip affordances during drag.
 - Use color sparingly for category or action feedback.
+- Use a single soft shadow for the active deck card; do not combine it with a border.
 
 ## Gestures
 
