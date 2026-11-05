@@ -67,7 +67,7 @@ Preferences:
 
 Use a small native app architecture:
 
-- Models: `Activity`, `ActivityPreferences`, `UserActivitySignal`.
+- Models and persisted state: `Activity`, `ActivityPreferences`, `PersistedActivityState`.
 - Catalog service: loads bundled JSON and validates decode.
 - Ranking service: pure Swift rule-based scoring.
 - Persistence service: saved/skipped IDs and preferences.

@@ -19,10 +19,6 @@ Required fields:
 - `steps`: short action plan.
 
 Optional fields:
-- `prepMinutes`
-- `season`
-- `timeOfDay`
-- `spaceNeeded`
 - `safetyNote`
 
 ## Categories
@@ -75,15 +71,17 @@ Do not require location to decide setting.
 
 The MVP remains solo-first even if activities can support other modes.
 
-## User Activity Signal
+## Local Activity State
 
-Represents a local action:
+The MVP stores local state as sets of activity IDs rather than timestamped signal
+records:
 
-- `activityId`
-- `action`: saved, skipped, completed
-- `timestamp`
+- saved IDs
+- skipped IDs
+- completed IDs, retained for persisted-state compatibility
+- explicit filter preferences
 
-`completed` is optional for v1. Add only if it does not distract from save/skip.
+The UI exposes save and skip. It does not expose completion tracking in v1.
 
 ## Preferences
 
@@ -124,13 +122,7 @@ CostLevel: free, low, medium, high
 EnergyLevel: low, medium, high
 ActivitySetting: indoor, outdoor, either
 SocialMode: solo, friend, date, group, any
-Season: spring, summer, autumn, winter, any
-TimeOfDay: morning, afternoon, evening, night, any
-SpaceNeeded: tiny, room, kitchen, outdoors, public
-UserActivityAction: saved, skipped, completed
 ```
-
-`completed` remains optional behavior. The model can support it, but Phase 4 and Phase 5 should prioritize saved and skipped first.
 
 ## Example Activity
 

@@ -287,10 +287,6 @@ final class EndlessActivityTests: XCTestCase {
             tags: tags,
             materials: [],
             steps: ["Start the activity.", "Finish the activity."],
-            prepMinutes: nil,
-            season: nil,
-            timeOfDay: nil,
-            spaceNeeded: nil,
             safetyNote: nil
         )
     }

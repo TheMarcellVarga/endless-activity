@@ -148,7 +148,7 @@ Acceptance gate:
 
 Completion verification, 2026-06-27:
 - The bundled `activities.json` contains the locked 50 unique activities and passes catalog validation.
-- Codable activity, preferences, and signal models compile under Swift 6.
+- Codable activity and preference models plus persisted local state compile under Swift 6.
 - UserDefaults-backed saved, skipped, completed, and preference state survives store recreation.
 - Filtering, exclusion, saved-category/tag boosts, seeded bucket ordering, reset behavior, and invalid catalog records are covered by passing tests.
 - Verification: `xcodebuild -project EndlessActivity.xcodeproj -scheme EndlessActivity -destination 'platform=iOS Simulator,name=iPhone 17e,OS=26.5' test`.

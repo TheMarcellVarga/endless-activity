@@ -53,7 +53,7 @@ Status: complete on 2026-06-27.
 Create:
 - `Activity` model
 - `ActivityPreferences` model
-- `UserActivitySignal` model
+- persisted local state for saved/skipped IDs and preferences
 - bundled JSON catalog
 - catalog loader
 - persistence service

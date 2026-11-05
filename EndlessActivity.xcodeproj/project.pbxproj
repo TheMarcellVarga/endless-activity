@@ -18,7 +18,6 @@
 		EA0000000000000000000009 /* EndlessActivityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000109 /* EndlessActivityUITests.swift */; };
 		EA0000000000000000000010 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000110 /* Activity.swift */; };
 		EA0000000000000000000011 /* ActivityPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000111 /* ActivityPreferences.swift */; };
-		EA0000000000000000000012 /* UserActivitySignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000112 /* UserActivitySignal.swift */; };
 		EA0000000000000000000013 /* ActivityCatalogLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000113 /* ActivityCatalogLoader.swift */; };
 		EA0000000000000000000014 /* ActivityPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000114 /* ActivityPersistenceStore.swift */; };
 		EA0000000000000000000015 /* ActivityRankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0000000000000000000115 /* ActivityRankingService.swift */; };
@@ -55,7 +54,6 @@
 		EA0000000000000000000109 /* EndlessActivityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessActivityUITests.swift; sourceTree = "<group>"; };
 		EA0000000000000000000110 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		EA0000000000000000000111 /* ActivityPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPreferences.swift; sourceTree = "<group>"; };
-		EA0000000000000000000112 /* UserActivitySignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivitySignal.swift; sourceTree = "<group>"; };
 		EA0000000000000000000113 /* ActivityCatalogLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCatalogLoader.swift; sourceTree = "<group>"; };
 		EA0000000000000000000114 /* ActivityPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPersistenceStore.swift; sourceTree = "<group>"; };
 		EA0000000000000000000115 /* ActivityRankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRankingService.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 			children = (
 				EA0000000000000000000110 /* Activity.swift */,
 				EA0000000000000000000111 /* ActivityPreferences.swift */,
-				EA0000000000000000000112 /* UserActivitySignal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,7 +323,6 @@
 				EA0000000000000000000006 /* PreferencesView.swift in Sources */,
 				EA0000000000000000000010 /* Activity.swift in Sources */,
 				EA0000000000000000000011 /* ActivityPreferences.swift in Sources */,
-				EA0000000000000000000012 /* UserActivitySignal.swift in Sources */,
 				EA0000000000000000000013 /* ActivityCatalogLoader.swift in Sources */,
 				EA0000000000000000000014 /* ActivityPersistenceStore.swift in Sources */,
 				EA0000000000000000000015 /* ActivityRankingService.swift in Sources */,

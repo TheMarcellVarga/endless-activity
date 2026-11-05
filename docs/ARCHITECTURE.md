@@ -38,8 +38,8 @@ flowchart TD
   LoadCatalog --> Rank["Rank Eligible Activities"]
   LoadLocal --> Rank
   Rank --> Deck["Discover Deck"]
-  Deck --> Save["Save Signal"]
-  Deck --> Skip["Skip Signal"]
+  Deck --> Save["Save Action"]
+  Deck --> Skip["Skip Action"]
   Save --> Persist["Persist Local State"]
   Skip --> Persist
   Persist --> Rank
@@ -58,8 +58,8 @@ Persistence service:
 
 Ranking service:
 - Pure Swift logic.
-- Input: catalog, preferences, user signals.
-- Output: ordered activity IDs or activities.
+- Input: catalog, preferences, saved IDs, and skipped IDs.
+- Output: activities ordered for the Discover deck.
 - No SwiftUI dependency.
 
 Views:
@@ -71,12 +71,12 @@ Views:
 
 - `Activity`
 - `ActivityCategory`
-- `ActivityCostLevel`
-- `ActivityEnergyLevel`
+- `CostLevel`
+- `EnergyLevel`
 - `ActivitySetting`
-- `ActivitySocialMode`
+- `SocialMode`
 - `ActivityPreferences`
-- `UserActivitySignal`
+- `PersistedActivityState`
 - `ActivityCatalogLoader`
 - `ActivityPersistenceStore`
 - `ActivityRankingService`
